@@ -19,6 +19,10 @@ use App\Http\Controllers\RfidVehicleController;
 use App\Http\Controllers\ParkingController;
 use App\Http\Controllers\PaymentController;
 
+use App\Http\Controllers\SupportController;
+use App\Http\Controllers\EmployeeController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -290,6 +294,31 @@ Route::group(
     Route::get('parked/vehicle', [ParkingController::class,'parkedVehicle'])->name('parked.vehicle');
     Route::get('parking/{id}/thermal/print', [ParkingController::class,'thermalPrint'])->name('parking.thermal.print');
 });
+
+
+
+// Employee management create edit delete 
+
+Route::group(
+    [
+        'middleware' => [
+            'auth',
+            'XSS',
+        ],
+    ], function () {
+
+    Route::resource('employee', EmployeeController::class);
+    
+});
+
+
+
+Route::resource('employee', EmployeeController::class)->middleware(
+    [
+        'auth',
+        'XSS',
+    ]
+);
 
 //-------------------------------Plan Payment-------------------------------------------
 

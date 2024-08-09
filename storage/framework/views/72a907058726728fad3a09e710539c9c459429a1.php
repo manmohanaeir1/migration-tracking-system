@@ -74,34 +74,19 @@
                 <?php endif; ?>
             <?php endif; ?>
 
-            <?php if( Gate::check('manage parking rate') ||  Gate::check('manage parking slot') ||  Gate::check('manage rfid vehicle') ||  Gate::check('manage parking') || Gate::check('manage contact') || Gate::check('manage support') || Gate::check('manage note') ): ?>
+            <?php if( Gate::check('manage employee')  ||  Gate::check('manage parking') || Gate::check('manage contact') || Gate::check('manage support') || Gate::check('manage note') ): ?>
                 <li class="cdxmenu-title">
-                    <h5><?php echo e(__('Business Management')); ?></h5>
+                    <h5><?php echo e(__('Employee Management')); ?></h5>
                 </li>
-                <?php if(Gate::check('manage parking rate')): ?>
-                    <li class="menu-item <?php echo e(in_array($routeName,['parking-rate.index'])?'active':''); ?>">
-                        <a href="<?php echo e(route('parking-rate.index')); ?>">
+                <?php if(Gate::check('manage employee')): ?>
+                    <li class="menu-item <?php echo e(in_array($routeName,['employee.index'])?'active':''); ?>">
+                        <a href="<?php echo e(route('employee.index')); ?>">
                             <div class="icon-item"><i data-feather="file-text"></i></div>
-                            <span><?php echo e(__('Parking Rate')); ?></span>
+                            <span><?php echo e(__('Employee')); ?></span>
                         </a>
                     </li>
                 <?php endif; ?>
-                <?php if(Gate::check('manage parking slot')): ?>
-                    <li class="menu-item <?php echo e(in_array($routeName,['parking-slot.index'])?'active':''); ?>">
-                        <a href="<?php echo e(route('parking-slot.index')); ?>">
-                            <div class="icon-item"><i data-feather="map"></i></div>
-                            <span><?php echo e(__('Parking Slot')); ?></span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-                <?php if(Gate::check('manage rfid vehicle')): ?>
-                    <li class="menu-item <?php echo e(in_array($routeName,['rfid-vehicle.index'])?'active':''); ?>">
-                        <a href="<?php echo e(route('rfid-vehicle.index')); ?>">
-                            <div class="icon-item"><i data-feather="truck"></i></div>
-                            <span><?php echo e(__('RFID Vehicle')); ?></span>
-                        </a>
-                    </li>
-                <?php endif; ?>
+                
                 <?php if(Gate::check('manage parking')): ?>
                     <li class="menu-item <?php echo e(in_array($routeName,['parking.index','parking.show'])?'active':''); ?>">
                         <a href="<?php echo e(route('parking.index')); ?>">
@@ -110,14 +95,8 @@
                         </a>
                     </li>
                 <?php endif; ?>
-                <?php if(Gate::check('manage parking')): ?>
-                    <li class="menu-item <?php echo e(in_array($routeName,['parked.vehicle'])?'active':''); ?>">
-                        <a href="<?php echo e(route('parked.vehicle')); ?>">
-                            <div class="icon-item"><i data-feather="slash"></i></div>
-                            <span><?php echo e(__('Parked Vehicle')); ?></span>
-                        </a>
-                    </li>
-                <?php endif; ?>
+                .........................
+                
                 <?php if(Gate::check('manage contact')): ?>
                     <li class="menu-item <?php echo e(in_array($routeName,['contact.index'])?'active':''); ?>">
                         <a href="<?php echo e(route('contact.index')); ?>">

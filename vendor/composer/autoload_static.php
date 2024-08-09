@@ -637,6 +637,7 @@ class ComposerStaticInit8342c07d9161854d53f44a94c2ace5e8
         'App\\Models\\Coupon' => __DIR__ . '/../..' . '/app/Models/Coupon.php',
         'App\\Models\\CouponHistory' => __DIR__ . '/../..' . '/app/Models/CouponHistory.php',
         'App\\Models\\Custom' => __DIR__ . '/../..' . '/app/Models/Custom.php',
+        'App\\Models\\Employee' => __DIR__ . '/../..' . '/app/Models/Employee.php',
         'App\\Models\\Floor' => __DIR__ . '/../..' . '/app/Models/Floor.php',
         'App\\Models\\LoggedHistory' => __DIR__ . '/../..' . '/app/Models/LoggedHistory.php',
         'App\\Models\\NoticeBoard' => __DIR__ . '/../..' . '/app/Models/NoticeBoard.php',

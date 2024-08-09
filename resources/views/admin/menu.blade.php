@@ -74,34 +74,19 @@
                 @endif
             @endif
 
-            @if( Gate::check('manage parking rate') ||  Gate::check('manage parking slot') ||  Gate::check('manage rfid vehicle') ||  Gate::check('manage parking') || Gate::check('manage contact') || Gate::check('manage support') || Gate::check('manage note') )
+            @if( Gate::check('manage employee')  ||  Gate::check('manage parking') || Gate::check('manage contact') || Gate::check('manage support') || Gate::check('manage note') )
                 <li class="cdxmenu-title">
-                    <h5>{{__('Business Management')}}</h5>
+                    <h5>{{__('Employee Management')}}</h5>
                 </li>
-                @if(Gate::check('manage parking rate'))
-                    <li class="menu-item {{in_array($routeName,['parking-rate.index'])?'active':''}}">
-                        <a href="{{route('parking-rate.index')}}">
+                @if(Gate::check('manage employee'))
+                    <li class="menu-item {{in_array($routeName,['employee.index'])?'active':''}}">
+                        <a href="{{route('employee.index')}}">
                             <div class="icon-item"><i data-feather="file-text"></i></div>
-                            <span>{{__('Parking Rate')}}</span>
+                            <span>{{__('Employee')}}</span>
                         </a>
                     </li>
                 @endif
-                @if(Gate::check('manage parking slot'))
-                    <li class="menu-item {{in_array($routeName,['parking-slot.index'])?'active':''}}">
-                        <a href="{{route('parking-slot.index')}}">
-                            <div class="icon-item"><i data-feather="map"></i></div>
-                            <span>{{__('Parking Slot')}}</span>
-                        </a>
-                    </li>
-                @endif
-                @if(Gate::check('manage rfid vehicle'))
-                    <li class="menu-item {{in_array($routeName,['rfid-vehicle.index'])?'active':''}}">
-                        <a href="{{route('rfid-vehicle.index')}}">
-                            <div class="icon-item"><i data-feather="truck"></i></div>
-                            <span>{{__('RFID Vehicle')}}</span>
-                        </a>
-                    </li>
-                @endif
+                
                 @if(Gate::check('manage parking'))
                     <li class="menu-item {{in_array($routeName,['parking.index','parking.show'])?'active':''}}">
                         <a href="{{route('parking.index')}}">
@@ -110,14 +95,8 @@
                         </a>
                     </li>
                 @endif
-                @if(Gate::check('manage parking'))
-                    <li class="menu-item {{in_array($routeName,['parked.vehicle'])?'active':''}}">
-                        <a href="{{route('parked.vehicle')}}">
-                            <div class="icon-item"><i data-feather="slash"></i></div>
-                            <span>{{__('Parked Vehicle')}}</span>
-                        </a>
-                    </li>
-                @endif
+                .........................
+                
                 @if(Gate::check('manage contact'))
                     <li class="menu-item {{in_array($routeName,['contact.index'])?'active':''}}">
                         <a href="{{route('contact.index')}}">

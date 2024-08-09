@@ -291,6 +291,28 @@ class DefaultDataUsersTableSeeder extends Seeder
                 'name' => 'show parking',
                 'guard_name' => 'web',
             ],
+
+            // fro employee 
+            [
+                'name' => 'manage employee',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'create employee',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'edit employee',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'delete employee',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'show employee',
+                'guard_name' => 'web',
+            ],
         ];
         Permission::insert($allPermissions);
 
@@ -331,6 +353,17 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'manage payment settings'],
             ['name' => 'manage seo settings'],
             ['name' => 'manage google recaptcha settings'],
+
+
+            // fro employee 
+            ['name' => 'manage employee'],
+            ['name' => 'create employee'],
+            ['name' => 'edit employee'],
+            ['name' => 'delete employee'],  
+            ['name' => 'show employee'],    
+
+
+            
 
         ];
         $systemSuperAdminRole->givePermissionTo($systemSuperAdminPermission);

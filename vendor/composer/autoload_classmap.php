@@ -53,6 +53,7 @@ return array(
     'App\\Models\\Coupon' => $baseDir . '/app/Models/Coupon.php',
     'App\\Models\\CouponHistory' => $baseDir . '/app/Models/CouponHistory.php',
     'App\\Models\\Custom' => $baseDir . '/app/Models/Custom.php',
+    'App\\Models\\Employee' => $baseDir . '/app/Models/Employee.php',
     'App\\Models\\Floor' => $baseDir . '/app/Models/Floor.php',
     'App\\Models\\LoggedHistory' => $baseDir . '/app/Models/LoggedHistory.php',
     'App\\Models\\NoticeBoard' => $baseDir . '/app/Models/NoticeBoard.php',
