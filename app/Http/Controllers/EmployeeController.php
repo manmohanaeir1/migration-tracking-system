@@ -16,8 +16,8 @@ class EmployeeController extends Controller
     {
        
         if (\Auth::user()->can('manage employee')) {
-            
-            return view('employee.index');
+                $employees = Employee::all();
+            return view('employee.index', compact('employees'));
         } else {
             return redirect()->back()->with('error', __('Permission denied.'));
         }

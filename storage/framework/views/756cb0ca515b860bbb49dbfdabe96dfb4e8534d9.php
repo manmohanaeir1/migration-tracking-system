@@ -34,13 +34,13 @@
                             <th><?php echo e(__('Age')); ?></th>
                             <th><?php echo e(__('Guardian Name')); ?></th>
                             <th><?php echo e(__('Guardian Contact')); ?></th>
-                            <th><?php echo e(__('Foregin Destination Country/City ')); ?></th>
+                            <th><?php echo e(__('Foregin Destination Country/City')); ?></th>
                             <th><?php echo e(__('Destination Country Contact')); ?></th>
-                            <th><?php echo e(__('Foregin Destination Job  ')); ?></th>
-                            <th><?php echo e(__('Foregin Job Finding Agent Name  ')); ?></th>
-                            <th><?php echo e(__('Foregin Job Finding Agent Contact  ')); ?></th>
-                            <th><?php echo e(__('Date of Heading Towards Foregin  ')); ?></th>
-                            <th><?php echo e(__('Duration of Foregin Job ')); ?></th>
+                            <th><?php echo e(__('Foregin Destination Job')); ?></th>
+                            <th><?php echo e(__('Foregin Job Finding Agent Name')); ?></th>
+                            <th><?php echo e(__('Foregin Job Finding Agent Contact')); ?></th>
+                            <th><?php echo e(__('Date of Heading Towards Foregin')); ?></th>
+                            <th><?php echo e(__('Duration of Foregin Job')); ?></th>
                             <th><?php echo e(__('Bank Account')); ?></th>
                             <th><?php echo e(__('Skills')); ?></th>
                             <th><?php echo e(__('Return Date')); ?></th>
@@ -58,6 +58,48 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <?php $__currentLoopData = $employees; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <tr>
+                                <td><?php echo e($employee->registration_id); ?></td>
+                                <td><?php echo e($employee->foreign_employee_name); ?></td>
+                                <td><?php echo e($employee->address); ?></td>
+                                <td><?php echo e($employee->age); ?></td>
+                                <td><?php echo e($employee->guardian_name); ?></td>
+                                <td><?php echo e($employee->guardian_contact); ?></td>
+                                <td><?php echo e($employee->foreign_destination_country_city); ?></td>
+                                <td><?php echo e($employee->destination_country_contact); ?></td>
+                                <td><?php echo e($employee->foreign_destination_job); ?></td>
+                                <td><?php echo e($employee->foreign_job_finding_agent_name); ?></td>
+                                <td><?php echo e($employee->foreign_job_finding_agent_contact); ?></td>
+                                <td><?php echo e($employee->date_of_heading_towards_foreign); ?></td>
+                                <td><?php echo e($employee->duration_of_foreign_job); ?></td>
+                                <td><?php echo e($employee->bank_account); ?></td>
+                                <td><?php echo e($employee->skills); ?></td>
+                                <td><?php echo e($employee->return_date); ?></td>
+                                <td><?php echo e($employee->remarks); ?></td>
+                                <td><?php echo e($employee->foreign_destination_job); ?></td>
+                                <?php if(Gate::check('edit employee') ||  Gate::check('delete employee') ||  Gate::check('show employee')): ?>
+                                    <td class="text-right ">
+                                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show employee')): ?>
+                                            <a href="#" class="view-icon" data-url="<?php echo e(route('employee.show',$employee->id)); ?>" data-size="xl" data-ajax-popup="true" data-title="<?php echo e(__('Employee Detail')); ?>">
+                                                <i class="fas fa-eye text-info"></i>
+                                            </a>
+                                        <?php endif; ?>
+                                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('edit employee')): ?>
+                                            <a href="#" class="edit-icon" data-url="<?php echo e(route('employee.edit',$employee->id)); ?>" data-size="xl" data-ajax-popup="true" data-title="<?php echo e(__('Edit Employee')); ?>">
+                                                <i class="fas fa-pencil-alt text-info"></i>
+                                            </a>
+                                        <?php endif; ?>
+                                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('delete employee')): ?>
+                                            <a href="#" class="delete-icon" data-url="<?php echo e(route('employee.destroy',$employee->id)); ?>" data-ajax-popup="true" data-title="<?php echo e(__('Delete Employee')); ?>" data-toggle="tooltip" data-original-title="<?php echo e(__('Delete')); ?>">
+                                                <i class="fas fa-trash text-danger"></i>
+                                            </a>
+                                        <?php endif; ?>
+                                    </td>
+                                <?php endif; ?>
+                            </tr>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        
                        
                         </tbody>
                     </table>
