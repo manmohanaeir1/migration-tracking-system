@@ -28,15 +28,30 @@
                     <table class="display dataTable cell-border datatbl-advance">
                         <thead>
                         <tr>
-                            <th><?php echo e(__('ID')); ?></th>
-                            <th><?php echo e(__('Zone')); ?></th>
-                            <th><?php echo e(__('Type')); ?></th>
-                            <th><?php echo e(__('Slot')); ?></th>
-                            <th><?php echo e(__('Vehicle No')); ?></th>
-                            <th><?php echo e(__('Entry')); ?></th>
-                            <th><?php echo e(__('Exit')); ?></th>
-                            <th><?php echo e(__('Payment Status')); ?></th>
-                            <th><?php echo e(__('Status')); ?></th>
+                            <th><?php echo e(__('Registration/ID')); ?></th>
+                            <th><?php echo e(__('Foregin Employee Name')); ?></th>
+                            <th><?php echo e(__('Address(Toll))')); ?></th>
+                            <th><?php echo e(__('Age')); ?></th>
+                            <th><?php echo e(__('Guardian Name')); ?></th>
+                            <th><?php echo e(__('Guardian Contact')); ?></th>
+                            <th><?php echo e(__('Foregin Destination Country/City ')); ?></th>
+                            <th><?php echo e(__('Destination Country Contact')); ?></th>
+                            <th><?php echo e(__('Foregin Destination Job  ')); ?></th>
+                            <th><?php echo e(__('Foregin Job Finding Agent Name  ')); ?></th>
+                            <th><?php echo e(__('Foregin Job Finding Agent Contact  ')); ?></th>
+                            <th><?php echo e(__('Date of Heading Towards Foregin  ')); ?></th>
+                            <th><?php echo e(__('Duration of Foregin Job ')); ?></th>
+                            <th><?php echo e(__('Bank Account')); ?></th>
+                            <th><?php echo e(__('Skills')); ?></th>
+                            <th><?php echo e(__('Return Date')); ?></th>
+                            <th><?php echo e(__('Remarks')); ?></th>
+
+                            
+
+
+
+
+                            <th><?php echo e(__('Foregin Destination Job  ')); ?></th>
                             <?php if(Gate::check('edit employee') ||  Gate::check('delete employee') ||  Gate::check('show employee')): ?>
                                 <th class="text-right"><?php echo e(__('Action')); ?></th>
                             <?php endif; ?>

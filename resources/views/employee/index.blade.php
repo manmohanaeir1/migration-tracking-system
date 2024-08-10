@@ -28,15 +28,30 @@
                     <table class="display dataTable cell-border datatbl-advance">
                         <thead>
                         <tr>
-                            <th>{{__('ID')}}</th>
-                            <th>{{__('Zone')}}</th>
-                            <th>{{__('Type')}}</th>
-                            <th>{{__('Slot')}}</th>
-                            <th>{{__('Vehicle No')}}</th>
-                            <th>{{__('Entry')}}</th>
-                            <th>{{__('Exit')}}</th>
-                            <th>{{__('Payment Status')}}</th>
-                            <th>{{__('Status')}}</th>
+                            <th>{{__('Registration/ID')}}</th>
+                            <th>{{__('Foregin Employee Name')}}</th>
+                            <th>{{__('Address(Toll))')}}</th>
+                            <th>{{__('Age')}}</th>
+                            <th>{{__('Guardian Name')}}</th>
+                            <th>{{__('Guardian Contact')}}</th>
+                            <th>{{__('Foregin Destination Country/City')}}</th>
+                            <th>{{__('Destination Country Contact')}}</th>
+                            <th>{{__('Foregin Destination Job')}}</th>
+                            <th>{{__('Foregin Job Finding Agent Name')}}</th>
+                            <th>{{__('Foregin Job Finding Agent Contact')}}</th>
+                            <th>{{__('Date of Heading Towards Foregin')}}</th>
+                            <th>{{__('Duration of Foregin Job')}}</th>
+                            <th>{{__('Bank Account')}}</th>
+                            <th>{{__('Skills')}}</th>
+                            <th>{{__('Return Date')}}</th>
+                            <th>{{__('Remarks')}}</th>
+
+                            
+
+
+
+
+                            <th>{{__('Foregin Destination Job  ')}}</th>
                             @if(Gate::check('edit employee') ||  Gate::check('delete employee') ||  Gate::check('show employee'))
                                 <th class="text-right">{{__('Action')}}</th>
                             @endif
