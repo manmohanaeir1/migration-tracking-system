@@ -147,147 +147,8 @@
 </section>
 <!-- intro end-->
 <!-- demo start-->
-<section class="space-py-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                <div class="land-title">
-                    <h2 class="wow fadeInLeft">{{__('Our Benefits')}}</h2>
-                    <h1 class="wow fadeInRight">{{__('Reason to Choose US')}}</h1>
-                </div>
-            </div>
-        </div>
-        <div class="row cdx-row justify-content-center">
-            <div class="ecompro-slide arrow-style1">
-                <div>
-                    <div class="card ecom-product">
-                        <div class="card-body p-10">
-                            <div class="product-imgwrap"><img class="img-fluid"
-                                                              src="{{ asset('assets/images/landing/1.png') }}"
-                                                              alt="1.jpg"></div>
-                            <div class="detail-wrap">
-                                <a href="#">
-                                    <h5>{{__('Dashboard')}}</h5>
-                                    <p>{{__('EasyPark system integrates technology to efficiently manage parking spaces, enhance user experience, and enforce rules and regulations.')}}</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="card ecom-product">
-                        <div class="card-body p-10">
-                            <div class="product-imgwrap"><img class="img-fluid"
-                                                              src="{{ asset('assets/images/landing/2.png') }}"
-                                                              alt="1.jpg"></div>
-                            <div class="detail-wrap">
-                                <a href="#">
-                                    <h5>{{__('Parking')}}</h5>
-                                    <p>{{__('EasyPark system integrates technology to efficiently manage parking spaces, enhance user experience, and enforce rules and regulations.')}}</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="card ecom-product">
-                        <div class="card-body p-10">
-                            <div class="product-imgwrap"><img class="img-fluid"
-                                                              src="{{ asset('assets/images/landing/3.png') }}"
-                                                              alt="1.jpg"></div>
-                            <div class="detail-wrap">
-                                <a href="#">
-                                    <h5>{{__('Parking Zone')}}</h5>
-                                    <p>{{__('EasyPark system integrates technology to efficiently manage parking spaces, enhance user experience, and enforce rules and regulations.')}}</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="card ecom-product">
-                        <div class="card-body p-10">
-                            <div class="product-imgwrap"><img class="img-fluid"
-                                                              src="{{ asset('assets/images/landing/4.png') }}"
-                                                              alt="1.jpg"></div>
-                            <div class="detail-wrap">
-                                <a href="#">
-                                    <h5>{{__('Parking Details')}}</h5>
-                                    <p>{{__('EasyPark system integrates technology to efficiently manage parking spaces, enhance user experience, and enforce rules and regulations.')}}</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="card ecom-product">
-                        <div class="card-body p-10">
-                            <div class="product-imgwrap"><img class="img-fluid"
-                                                              src="{{ asset('assets/images/landing/5.png') }}"
-                                                              alt="1.jpg"></div>
-                            <div class="detail-wrap">
-                                <a href="#">
-                                    <h5>{{__('Parking Slot')}}</h5>
-                                    <p>{{__('EasyPark system integrates technology to efficiently manage parking spaces, enhance user experience, and enforce rules and regulations.')}}</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-    </div>
-</section>
-<!-- demo end-->
-<!-- header otpion start-->
-<section class="landheader-comp space-py-100 overflow-visible" id="pricing">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                <div class="land-title">
-                    <h2 class="wow fadeInLeft">{{__('Affordable Pricing Based On Your Needs')}}</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row pricing-grid">
-            @foreach($subscriptions as $subscription)
-                <div class="col-xxl-3 cdx-xl-50 col-sm-6">
-                    <div class="codex-pricingtbl">
-                        <div class="price-header">
-                            <h2>{{$subscription->title}}</h2>
-                            <div class="price-value">{{subscriptionPaymentSettings()['CURRENCY_SYMBOL'].$subscription->package_amount}}<span>/ {{$subscription->interval}}</span></div>
-                        </div>
-                        <ul class="cdxprice-list">
-                            <li><span> <i class="text-success mr-4" data-feather="check-circle"></i>{{$subscription->user_limit}}</span>{{__('User Limit')}}</li>
-                            <li><span> <i class="text-success mr-4" data-feather="check-circle"></i>{{$subscription->parking_zone_limit}}</span>{{__('Zone Limit')}}</li>
-                            <li>
-                                @if($subscription->couponCheck()>0)
-                                    <i class="text-success mr-4" data-feather="check-circle"></i>
-                                @else
-                                    <i class="text-danger mr-4" data-feather="x-circle"></i>
-                                @endif
-                                {{__('Coupon Applicable')}}
-                            </li>
-                            <li>
-                                @if($subscription->enabled_logged_history==1)
-                                    <i class="text-success mr-4" data-feather="check-circle"></i>
-                                @else
-                                    <i class="text-danger mr-4" data-feather="x-circle"></i>
-                                @endif
-                                {{__('User Logged History')}}
-                            </li>
-                        </ul>
-                        <a class="btn btn-primary" href="{{route('register')}}">{{__('Purchase Now')}} </a>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-<!-- header otpion End-->
-<!-- innderpages start-->
-<section class="space-py-100" id="features">
+{{-- <section class="space-py-100" id="features">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
@@ -419,7 +280,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- innderpages end-->
 
 <!-- header otpion start-->

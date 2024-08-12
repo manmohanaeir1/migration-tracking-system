@@ -87,16 +87,7 @@
                     </li>
                 @endif
                 
-                @if(Gate::check('manage parking'))
-                    <li class="menu-item {{in_array($routeName,['parking.index','parking.show'])?'active':''}}">
-                        <a href="{{route('parking.index')}}">
-                            <div class="icon-item"><i data-feather="trello"></i></div>
-                            <span>{{__('Parking')}}</span>
-                        </a>
-                    </li>
-                @endif
-                .........................
-                
+                                 
                 @if(Gate::check('manage contact'))
                     <li class="menu-item {{in_array($routeName,['contact.index'])?'active':''}}">
                         <a href="{{route('contact.index')}}">
@@ -116,81 +107,12 @@
                 @endif
 
             @endif
-            @if( Gate::check('manage parking zone') || Gate::check('manage vehicle_type') || Gate::check('manage floor'))
-                <li class="cdxmenu-title">
-                    <h5>{{__('System Setup')}}</h5>
-                </li>
-                @if(Gate::check('manage parking zone'))
-                    <li class="menu-item {{in_array($routeName,['parking-zone.index'])?'active':''}}">
-                        <a href="{{route('parking-zone.index')}}">
-                            <div class="icon-item"><i data-feather="hard-drive"></i></div>
-                            <span>{{__('Parking Zone')}}</span>
-                        </a>
-                    </li>
-                @endif
-                @if(Gate::check('manage vehicle type'))
-                    <li class="menu-item {{in_array($routeName,['vehicle-type.index'])?'active':''}}">
-                        <a href="{{route('vehicle-type.index')}}">
-                            <div class="icon-item"><i data-feather="sliders"></i></div>
-                            <span>{{__('Vehicle Type')}}</span>
-                        </a>
-                    </li>
-                @endif
-                @if(Gate::check('manage floor'))
-                    <li class="menu-item {{in_array($routeName,['floor.index'])?'active':''}}">
-                        <a href="{{route('floor.index')}}">
-                            <div class="icon-item"><i data-feather="layers"></i></div>
-                            <span>{{__('Parking Floor')}}</span>
-                        </a>
-                    </li>
-                @endif
-            @endif
+           
             @if(Gate::check('manage pricing packages') || Gate::check('manage pricing transation') || Gate::check('manage account settings') || Gate::check('manage password settings') || Gate::check('manage general settings') || Gate::check('manage company settings'))
                 <li class="cdxmenu-title">
                     <h5>{{__('System Settings')}}</h5>
                 </li>
-                @if(Gate::check('manage pricing packages') || Gate::check('manage pricing transation'))
-                    <li class="menu-item {{in_array($routeName,['subscriptions.index','subscriptions.show','subscription.transaction'])?'active':''}}">
-                        <a href="javascript:void(0);">
-                            <div class="icon-item"><i data-feather="database"></i></div>
-                            <span>{{__('Pricing')}}</span><i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="submenu-list"
-                            style="display: {{in_array($routeName,['subscriptions.index','subscriptions.show','subscription.transaction'])?'block':'none'}}">
-                            @if(Gate::check('manage pricing packages'))
-                                <li class="{{in_array($routeName,['subscriptions.index','subscriptions.show'])?'active':''}}">
-                                    <a href="{{route('subscriptions.index')}}">{{__('Packages')}}</a>
-                                </li>
-                            @endif
-                            @if(Gate::check('manage pricing transation'))
-                                <li class="{{in_array($routeName,['subscription.transaction'])?'active':''}} ">
-                                    <a href="{{route('subscription.transaction')}}">{{__('Transactions')}}</a>
-                                </li>
-                            @endif
-                        </ul>
-                    </li>
-                @endif
-                @if(Gate::check('manage coupon') || Gate::check('manage coupon history'))
-                    <li class="menu-item {{in_array($routeName,['coupons.index','coupons.history'])?'active':''}}">
-                        <a href="javascript:void(0);">
-                            <div class="icon-item"><i data-feather="gift"></i></div>
-                            <span>{{__('Coupons')}}</span><i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="submenu-list"
-                            style="display: {{in_array($routeName,['coupons.index','coupons.history'])?'block':'none'}}">
-                            @if(Gate::check('manage coupon'))
-                                <li class="{{in_array($routeName,['coupons.index'])?'active':''}}">
-                                    <a href="{{route('coupons.index')}}">{{__('All Coupon')}}</a>
-                                </li>
-                            @endif
-                            @if(Gate::check('manage coupon history'))
-                                <li class="{{in_array($routeName,['coupons.history'])?'active':''}}">
-                                    <a href="{{route('coupons.history')}}">{{__('Coupon History')}}</a>
-                                </li>
-                            @endif
-                        </ul>
-                    </li>
-                @endif
+               
                 @if(Gate::check('manage account settings') || Gate::check('manage password settings') || Gate::check('manage general settings') || Gate::check('manage company settings') || Gate::check('manage seo settings') || Gate::check('manage google recaptcha settings'))
                     <li class="menu-item {{in_array($routeName,['setting.account','setting.password','setting.general','setting.company','setting.smtp','setting.payment','setting.site.seo','setting.google.recaptcha'])?'active':''}}">
                         <a href="javascript:void(0);">

@@ -17,7 +17,7 @@
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Total Parking Zone')}}</h4>
+                    <h4>{{__('Total Foreign Employees')}}</h4>
                 </div>
                 <div class="card-body progressCounter">
                     <h2>
@@ -29,7 +29,7 @@
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Total Slot')}}</h4>
+                    <h4>{{__('Active')}}</h4>
                 </div>
                 <div class="card-body progressCounter">
                     <h2>
@@ -42,7 +42,7 @@
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Available Slot')}}</h4>
+                    <h4>{{__('Inactive')}}</h4>
                 </div>
                 <div class="card-body progressCounter">
                     <h2>
@@ -55,7 +55,7 @@
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Today Income')}}</h4>
+                    <h4>{{__('Returned Employee')}}</h4>
                 </div>
                 <div class="card-body progressCounter">
                     <h2>
@@ -64,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xxl-12 cdx-xxl-50">
+      {{--   <div class="col-xxl-12 cdx-xxl-50">
             <div class="card overall-revenuetbl">
                 <div class="card-header">
                     <h4>{{__('Income Flow Chart')}} </h4>
@@ -73,13 +73,13 @@
                     <div id="cashflow"></div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 
 @endsection
 
-@push('script-page')
+{{-- @push('script-page')
     <script>
         var options = {
             series: [{
@@ -204,3 +204,4 @@
         chart.render();
     </script>
 @endpush
+ --}}
