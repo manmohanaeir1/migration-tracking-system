@@ -16,7 +16,8 @@
     <?php if(Gate::check('create employee')): ?>
         <a class="btn btn-primary btn-sm ml-20 customModal" href="#" data-size="xl"
            data-url="<?php echo e(route('employee.create')); ?>"
-           data-title="<?php echo e(__('Create Employee')); ?>"> <i class="ti-plus mr-5"></i><?php echo e(__('Register Employee')); ?></a>
+           data-title="<?php echo e(__('create employee')); ?>">
+            <i class="ti-plus mr-5"></i><?php echo e(__('create employee')); ?></a>
     <?php endif; ?>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -45,13 +46,10 @@
                             <th><?php echo e(__('Skills')); ?></th>
                             <th><?php echo e(__('Return Date')); ?></th>
                             <th><?php echo e(__('Remarks')); ?></th>
+                            <th><?php echo e(__('Status')); ?></th>
+
 
                             
-
-
-
-
-                            <th><?php echo e(__('Foregin Destination Job  ')); ?></th>
                             <?php if(Gate::check('edit employee') ||  Gate::check('delete employee') ||  Gate::check('show employee')): ?>
                                 <th class="text-right"><?php echo e(__('Action')); ?></th>
                             <?php endif; ?>
@@ -77,25 +75,49 @@
                                 <td><?php echo e($employee->skills); ?></td>
                                 <td><?php echo e($employee->return_date); ?></td>
                                 <td><?php echo e($employee->remarks); ?></td>
-                                <td><?php echo e($employee->foreign_destination_job); ?></td>
+                                <td>
+
+                                    
+                                    <?php if($employee->status == 1): ?>
+                                        <span class="badge badge-success"><?php echo e(__('Active')); ?></span>
+                                    <?php else: ?>
+                                        <span class="badge badge-danger"><?php echo e(__('Inactive')); ?></span>  
+                                    <?php endif; ?>
+                                </td>
+
+ 
+
                                 <?php if(Gate::check('edit employee') ||  Gate::check('delete employee') ||  Gate::check('show employee')): ?>
-                                    <td class="text-right ">
-                                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show employee')): ?>
-                                            <a href="#" class="view-icon" data-url="<?php echo e(route('employee.show',$employee->id)); ?>" data-size="xl" data-ajax-popup="true" data-title="<?php echo e(__('Employee Detail')); ?>">
-                                                <i class="fas fa-eye text-info"></i>
-                                            </a>
-                                        <?php endif; ?>
-                                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('edit employee')): ?>
-                                            <a href="#" class="edit-icon" data-url="<?php echo e(route('employee.edit',$employee->id)); ?>" data-size="xl" data-ajax-popup="true" data-title="<?php echo e(__('Edit Employee')); ?>">
-                                                <i class="fas fa-pencil-alt text-info"></i>
-                                            </a>
-                                        <?php endif; ?>
-                                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('delete employee')): ?>
-                                            <a href="#" class="delete-icon" data-url="<?php echo e(route('employee.destroy',$employee->id)); ?>" data-ajax-popup="true" data-title="<?php echo e(__('Delete Employee')); ?>" data-toggle="tooltip" data-original-title="<?php echo e(__('Delete')); ?>">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </a>
-                                        <?php endif; ?>
-                                    </td>
+                                        <td>
+                                            <div class="cart-action">
+                                                <?php echo Form::open(['method' => 'DELETE', 'route' => ['employee.destroy', $employee->id]]); ?>
+
+                                                <?php if(Gate::check('show employee')): ?>
+                                                    <a href="<?php echo e(route('employee.show',$employee->id)); ?>" class="action-item"
+                                                       data-toggle="tooltip" data-original-title="<?php echo e(__('Show')); ?>">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                <?php endif; ?>
+
+                   
+                                                <?php if(Gate::check('edit employee') || \Auth::user()->type=='super admin'): ?>
+                                                <a class="text-success customModal" data-bs-toggle="tooltip"
+                                                   data-bs-original-title="<?php echo e(__('Edit')); ?>" href="#"
+                                                   data-url="<?php echo e(route('employee.edit',$employee->id)); ?>"
+                                                   data-title="<?php echo e(__('Edit Employee')); ?>"> <i data-feather="edit"></i></a>
+                                            <?php endif; ?>
+                                            
+
+                                            <?php if(Gate::check('delete employee') || \Auth::user()->type=='super admin'): ?>
+                                                <a class=" text-danger confirm_dialog" data-bs-toggle="tooltip"
+                                                   data-bs-original-title="<?php echo e(__('Detete')); ?>" href="#"> <i
+                                                        data-feather="trash-2"></i></a>
+                                            <?php endif; ?>
+                                                <?php echo Form::close(); ?>
+
+                                            </div>
+                                        </td>
+                                     
                                 <?php endif; ?>
                             </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

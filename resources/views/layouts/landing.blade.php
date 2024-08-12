@@ -127,9 +127,11 @@
                 <div class="intro-contain">
                     <div>
                         <h1 class="wow fadeInLeft"
-                            data-wow-duration="1s">{{__('EasyPark - Vehicle Parking Management System')}}</h1>
+                            data-wow-duration="1s">{{__('Foreign Employees  - Tracking System ')}}</h1>
                         <p class="wow fadeInLeft"
-                           data-wow-duration="1.5s">{{__('EasyPark system integrates technology to efficiently manage parking spaces, enhance user experience, and enforce rules and regulations.')}}</p>
+                           data-wow-duration="1.5s">{{__('A foreign employment tracking system is a digital solution designed to monitor and manage information related to individuals working abroad. This system can be crucial for governments, recruitment agencies, and employers to ensure the safety, compliance, and well-being of workers employed in foreign countries. Here’s a basic outline of what such a system might include:
+
+ ')}}</p>
                         <a class="btn btn-primary" href="{{route('login')}}" data-wow-duration="1.8s"><i
                                 class="fa fa-television" aria-hidden="true"></i>{{__('Get Started')}} </a>
                     </div>

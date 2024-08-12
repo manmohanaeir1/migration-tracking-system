@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\ParkingZone;
 use App\Models\VehicleType;
 use Illuminate\Http\Request;
+ // for Auth 
+ 
 
 class VehicleTypeController extends Controller
 {

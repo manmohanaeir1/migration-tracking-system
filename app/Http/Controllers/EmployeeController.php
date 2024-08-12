@@ -30,8 +30,12 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
-    }
+        if (\Auth::user()->can('create employee')) {
+            return view('employee.create');
+        } else {
+            return redirect()->back()->with('error', __('Permission denied.'));
+        }
+    }   
 
     /**
      * Store a newly created resource in storage.

@@ -1,4 +1,4 @@
-<?php echo e(Form::open(array('url'=>'note','method'=>'post', 'enctype' => "multipart/form-data"))); ?>
+<?php echo e(Form::open(array('url'=>'s','method'=>'post', 'enctype' => "multipart/form-data"))); ?>
 
 <div class="modal-body">
     <div class="row">

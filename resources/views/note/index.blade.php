@@ -55,6 +55,7 @@
                                                    data-url="{{ route('note.edit',$note->id) }}"
                                                    data-title="{{__('Edit Note')}}"> <i data-feather="edit"></i></a>
                                             @endcan
+                                            
                                             @if(Gate::check('delete note') || \Auth::user()->type=='super admin')
                                                 <a class=" text-danger confirm_dialog" data-bs-toggle="tooltip"
                                                    data-bs-original-title="{{__('Detete')}}" href="#"> <i

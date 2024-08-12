@@ -16,7 +16,8 @@
     @if(Gate::check('create employee'))
         <a class="btn btn-primary btn-sm ml-20 customModal" href="#" data-size="xl"
            data-url="{{ route('employee.create') }}"
-           data-title="{{__('Create Employee')}}"> <i class="ti-plus mr-5"></i>{{__('Register Employee')}}</a>
+           data-title="{{__('create employee')}}">
+            <i class="ti-plus mr-5"></i>{{__('create employee')}}</a>
     @endif
 @endsection
 @section('content')
@@ -45,13 +46,10 @@
                             <th>{{__('Skills')}}</th>
                             <th>{{__('Return Date')}}</th>
                             <th>{{__('Remarks')}}</th>
+                            <th>{{__('Status')}}</th>
+
 
                             
-
-
-
-
-                            <th>{{__('Foregin Destination Job  ')}}</th>
                             @if(Gate::check('edit employee') ||  Gate::check('delete employee') ||  Gate::check('show employee'))
                                 <th class="text-right">{{__('Action')}}</th>
                             @endif
@@ -77,25 +75,47 @@
                                 <td>{{$employee->skills}}</td>
                                 <td>{{$employee->return_date}}</td>
                                 <td>{{$employee->remarks}}</td>
-                                <td>{{$employee->foreign_destination_job}}</td>
+                                <td>
+
+                                    
+                                    @if($employee->status == 1)
+                                        <span class="badge badge-success">{{__('Active')}}</span>
+                                    @else
+                                        <span class="badge badge-danger">{{__('Inactive')}}</span>  
+                                    @endif
+                                </td>
+
+ 
+
                                 @if(Gate::check('edit employee') ||  Gate::check('delete employee') ||  Gate::check('show employee'))
-                                    <td class="text-right ">
-                                        @can('show employee')
-                                            <a href="#" class="view-icon" data-url="{{ route('employee.show',$employee->id) }}" data-size="xl" data-ajax-popup="true" data-title="{{__('Employee Detail')}}">
-                                                <i class="fas fa-eye text-info"></i>
-                                            </a>
-                                        @endcan
-                                        @can('edit employee')
-                                            <a href="#" class="edit-icon" data-url="{{ route('employee.edit',$employee->id) }}" data-size="xl" data-ajax-popup="true" data-title="{{__('Edit Employee')}}">
-                                                <i class="fas fa-pencil-alt text-info"></i>
-                                            </a>
-                                        @endcan
-                                        @can('delete employee')
-                                            <a href="#" class="delete-icon" data-url="{{ route('employee.destroy',$employee->id) }}" data-ajax-popup="true" data-title="{{__('Delete Employee')}}" data-toggle="tooltip" data-original-title="{{__('Delete')}}">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </a>
-                                        @endcan
-                                    </td>
+                                        <td>
+                                            <div class="cart-action">
+                                                {!! Form::open(['method' => 'DELETE', 'route' => ['employee.destroy', $employee->id]]) !!}
+                                                @if(Gate::check('show employee'))
+                                                    <a href="{{ route('employee.show',$employee->id) }}" class="action-item"
+                                                       data-toggle="tooltip" data-original-title="{{__('Show')}}">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                @endif
+
+                   
+                                                @if(Gate::check('edit employee') || \Auth::user()->type=='super admin')
+                                                <a class="text-success customModal" data-bs-toggle="tooltip"
+                                                   data-bs-original-title="{{__('Edit')}}" href="#"
+                                                   data-url="{{ route('employee.edit',$employee->id) }}"
+                                                   data-title="{{__('Edit Employee')}}"> <i data-feather="edit"></i></a>
+                                            @endcan
+                                            
+
+                                            @if(Gate::check('delete employee') || \Auth::user()->type=='super admin')
+                                                <a class=" text-danger confirm_dialog" data-bs-toggle="tooltip"
+                                                   data-bs-original-title="{{__('Detete')}}" href="#"> <i
+                                                        data-feather="trash-2"></i></a>
+                                            @endcan
+                                                {!! Form::close() !!}
+                                            </div>
+                                        </td>
+                                     
                                 @endif
                             </tr>
                         @endforeach
