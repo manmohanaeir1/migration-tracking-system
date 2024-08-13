@@ -145,21 +145,7 @@
                                     <a href="{{route('setting.smtp')}}">{{__('SMTP Setting')}}</a>
                                 </li>
                             @endif
-                            @if(Gate::check('manage payment settings'))
-                                <li class="{{in_array($routeName,['setting.payment'])?'active':''}} ">
-                                    <a href="{{route('setting.payment')}}">{{__('Payment Setting')}}</a>
-                                </li>
-                            @endif
-                            @if(Gate::check('manage seo settings'))
-                                <li class="{{in_array($routeName,['setting.site.seo'])?'active':''}} ">
-                                    <a href="{{route('setting.site.seo')}}">{{__('Site SEO Setting')}}</a>
-                                </li>
-                            @endif
-                            @if(Gate::check('manage google recaptcha settings'))
-                                <li class="{{in_array($routeName,['setting.google.recaptcha'])?'active':''}} ">
-                                    <a href="{{route('setting.google.recaptcha')}}">{{__('ReCaptcha Setting')}}</a>
-                                </li>
-                            @endif
+                            
                         </ul>
                     </li>
                 @endif

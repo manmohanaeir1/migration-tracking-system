@@ -145,21 +145,7 @@
                                     <a href="<?php echo e(route('setting.smtp')); ?>"><?php echo e(__('SMTP Setting')); ?></a>
                                 </li>
                             <?php endif; ?>
-                            <?php if(Gate::check('manage payment settings')): ?>
-                                <li class="<?php echo e(in_array($routeName,['setting.payment'])?'active':''); ?> ">
-                                    <a href="<?php echo e(route('setting.payment')); ?>"><?php echo e(__('Payment Setting')); ?></a>
-                                </li>
-                            <?php endif; ?>
-                            <?php if(Gate::check('manage seo settings')): ?>
-                                <li class="<?php echo e(in_array($routeName,['setting.site.seo'])?'active':''); ?> ">
-                                    <a href="<?php echo e(route('setting.site.seo')); ?>"><?php echo e(__('Site SEO Setting')); ?></a>
-                                </li>
-                            <?php endif; ?>
-                            <?php if(Gate::check('manage google recaptcha settings')): ?>
-                                <li class="<?php echo e(in_array($routeName,['setting.google.recaptcha'])?'active':''); ?> ">
-                                    <a href="<?php echo e(route('setting.google.recaptcha')); ?>"><?php echo e(__('ReCaptcha Setting')); ?></a>
-                                </li>
-                            <?php endif; ?>
+                            
                         </ul>
                     </li>
                 <?php endif; ?>

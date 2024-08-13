@@ -56,6 +56,7 @@
                                                    data-url="<?php echo e(route('note.edit',$note->id)); ?>"
                                                    data-title="<?php echo e(__('Edit Note')); ?>"> <i data-feather="edit"></i></a>
                                             <?php endif; ?>
+                                            
                                             <?php if(Gate::check('delete note') || \Auth::user()->type=='super admin'): ?>
                                                 <a class=" text-danger confirm_dialog" data-bs-toggle="tooltip"
                                                    data-bs-original-title="<?php echo e(__('Detete')); ?>" href="#"> <i

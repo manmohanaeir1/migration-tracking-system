@@ -96,8 +96,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item"><a href="#demos">{{__('Home')}}</a></li>
-                                <li class="menu-item"><a href="#pricing">{{__('Pricing')}}</a></li>
-                                <li class="menu-item"><a href="#features">{{__('Features')}}</a></li>
+                               
                                 <li class="menu-item"><a href="#faq">{{__('FAQs')}}</a></li>
 
                                 <li class="menu-item">

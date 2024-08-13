@@ -96,8 +96,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item"><a href="#demos"><?php echo e(__('Home')); ?></a></li>
-                                <li class="menu-item"><a href="#pricing"><?php echo e(__('Pricing')); ?></a></li>
-                                <li class="menu-item"><a href="#features"><?php echo e(__('Features')); ?></a></li>
+                               
                                 <li class="menu-item"><a href="#faq"><?php echo e(__('FAQs')); ?></a></li>
 
                                 <li class="menu-item">
