@@ -71,7 +71,8 @@
           </div>
           <div class="form-group col-md-6">
             {{ Form::label('status', __('Status'), array('class'=>'form-label')) }}
-            {{ Form::select('status', ['Active' => 'Active', 'Inactive' => 'Inactive'], null, array('class'=>'form-control')) }}
+            {{-- active = 1 insert and inactive = 0 --}}
+            {{ Form::select('status', ['1' => 'Active', '0' => 'Inactive'], null, array('class'=>'form-control')) }}
           </div>
         </div>
 
