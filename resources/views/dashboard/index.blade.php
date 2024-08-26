@@ -21,7 +21,7 @@
                 </div>
                 <div class="card-body progressCounter">
                     <h2>
-                        <span class="count">{{$result['totalZone']}}</span>
+                        <span class="count">{{$result['totalEmployee']}}</span>
                     </h2>
                 </div>
             </div>

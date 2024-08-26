@@ -99,15 +99,13 @@
                                                         <i class="fa fa-eye"></i>
                                                     </a>
                                                 <?php endif; ?>
-
-                   
                                                 <?php if(Gate::check('edit employee') || \Auth::user()->type=='super admin'): ?>
-                                                <a class="text-success customModal" data-bs-toggle="tooltip"
-                                                   data-bs-original-title="<?php echo e(__('Edit')); ?>" href="#"
-                                                   data-url="<?php echo e(route('employee.edit',$employee->id)); ?>"
-                                                   data-title="<?php echo e(__('Edit Employee')); ?>"> <i data-feather="edit"></i></a>
+                                                    <a class="text-success customModal" data-bs-toggle="tooltip"
+                                                       data-bs-original-title="<?php echo e(__('Edit')); ?>" href="#"
+                                                       data-url="<?php echo e(route('employee.edit',$employee->id)); ?>"
+                                                       data-title="<?php echo e(__('Edit Employee')); ?>"> <i data-feather="edit"></i></a>
+                                                 
                                             <?php endif; ?>
-                                            
 
                                             <?php if(Gate::check('delete employee') || \Auth::user()->type=='super admin'): ?>
                                                 <a class=" text-danger confirm_dialog" data-bs-toggle="tooltip"

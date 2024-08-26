@@ -268,7 +268,7 @@
                     <h4><?php echo e(__('Total Foreign Employees')); ?></h4>
                 </div>
                 <div class="card-body progressCounter">
-                    <h2><?php echo e($result['totalOrganization']); ?></h2>
+                    <h2><?php echo e($result['totalEmployee']); ?></h2>
                 </div>
             </div>
         </div>
@@ -298,7 +298,7 @@
                     <h4><?php echo e(__('Total Inactive')); ?></h4>
                 </div>
                 <div class="card-body progressCounter">
-                    <h2><?php echo e(subscriptionPaymentSettings()['CURRENCY_SYMBOL'].$result['totalIncome']); ?></h2>
+                    <h2><?php echo e(subscriptionPaymentSettings()['CURRENCY_SYMBOL'].$result['totalActiveEmployee']); ?></h2>
                 </div>
             </div>
         </div>

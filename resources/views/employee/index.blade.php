@@ -97,15 +97,13 @@
                                                         <i class="fa fa-eye"></i>
                                                     </a>
                                                 @endif
-
-                   
                                                 @if(Gate::check('edit employee') || \Auth::user()->type=='super admin')
-                                                <a class="text-success customModal" data-bs-toggle="tooltip"
-                                                   data-bs-original-title="{{__('Edit')}}" href="#"
-                                                   data-url="{{ route('employee.edit',$employee->id) }}"
-                                                   data-title="{{__('Edit Employee')}}"> <i data-feather="edit"></i></a>
+                                                    <a class="text-success customModal" data-bs-toggle="tooltip"
+                                                       data-bs-original-title="{{__('Edit')}}" href="#"
+                                                       data-url="{{ route('employee.edit',$employee->id) }}"
+                                                       data-title="{{__('Edit Employee')}}"> <i data-feather="edit"></i></a>
+                                                 
                                             @endcan
-                                            
 
                                             @if(Gate::check('delete employee') || \Auth::user()->type=='super admin')
                                                 <a class=" text-danger confirm_dialog" data-bs-toggle="tooltip"

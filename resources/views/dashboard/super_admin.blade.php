@@ -267,7 +267,7 @@
                     <h4>{{__('Total Foreign Employees')}}</h4>
                 </div>
                 <div class="card-body progressCounter">
-                    <h2>{{$result['totalOrganization']}}</h2>
+                    <h2>{{$result['totalEmployee']}}</h2>
                 </div>
             </div>
         </div>
@@ -297,7 +297,7 @@
                     <h4>{{__('Total Inactive')}}</h4>
                 </div>
                 <div class="card-body progressCounter">
-                    <h2>{{subscriptionPaymentSettings()['CURRENCY_SYMBOL'].$result['totalIncome']}}</h2>
+                    <h2>{{subscriptionPaymentSettings()['CURRENCY_SYMBOL'].$result['totalActiveEmployee']}}</h2>
                 </div>
             </div>
         </div>

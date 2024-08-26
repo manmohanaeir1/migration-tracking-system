@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Custom;
+use App\Models\Employee;
 use App\Models\NoticeBoard;
 use App\Models\PackageTransaction;
 use App\Models\Parking;
@@ -21,11 +22,18 @@ class HomeController extends Controller
             if (\Auth::user()->type == 'super admin') {
                 $result['totalOrganization'] = User::where('type', 'owner')->count();
                 $result['totalSubscription'] = Subscription::count();
+                $result['totalEmployee'] = Employee::count();
+                // make for total active employ check active 
+                $result['totalActiveEmployee'] = Employee::where('status',1)->count();
+                
+
+            
+
                 $result['totalTransaction'] = PackageTransaction::count();
                 $result['totalIncome'] = PackageTransaction::sum('amount');
                 $result['totalNote'] = NoticeBoard::where('parent_id', parentId())->count();
                 $result['totalContact'] = Contact::where('parent_id', parentId())->count();
-
+ 
 
                 $result['organizationByMonth'] = $this->organizationByMonth();
                 $result['paymentByMonth'] = $this->paymentByMonth();
@@ -37,6 +45,7 @@ class HomeController extends Controller
                 $result['availableSlot'] = ParkingSlot::where('parent_id', parentId())->where('is_available',1)->count();
                 $result['todayIncome'] =Parking::where('parent_id', parentId())->where('entry_date',date('Y-m-d'))->sum('amount');
                 $result['income'] = $this->getIncome();
+                $result['totalEmployee'] = Employee::count();
 
                 $result['settings']=settings();
 
