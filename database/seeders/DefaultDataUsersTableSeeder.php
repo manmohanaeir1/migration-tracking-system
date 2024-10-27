@@ -117,6 +117,41 @@ class DefaultDataUsersTableSeeder extends Seeder
                 'name' => 'show employee',
                 'guard_name' => 'web',
             ],
+
+            [
+                'name' => 'manage account settings',
+                'guard_name' => 'web',
+
+            ],
+            [
+                'name' => 'manage password settings',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'manage general settings',
+                'guard_name' => 'web',
+
+            ],
+            [
+                'name' => 'manage company settings',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'manage email settings',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'manage payment settings',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'manage seo settings',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'manage google recaptcha settings',
+                'guard_name' => 'web',
+            ],
         ];
         Permission::insert($allPermissions);
 
@@ -140,9 +175,7 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'edit note'],
             ['name' => 'delete note'],
             
-
-             
-
+            
 
             // fro employee 
             ['name' => 'manage employee'],
@@ -150,6 +183,14 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'edit employee'],
             ['name' => 'delete employee'],  
             ['name' => 'show employee'],    
+
+            ['name' => 'manage account settings'],
+            ['name' => 'manage password settings'],
+            ['name' => 'manage general settings'],
+            ['name' => 'manage email settings'],
+            ['name' => 'manage payment settings'],
+            ['name' => 'manage seo settings'],
+            ['name' => 'manage google recaptcha settings'],
 
 
             
@@ -196,6 +237,12 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'delete note'],
             ['name' => 'manage logged history'],
             ['name' => 'delete logged history'],
+
+            ['name' => 'manage account settings'],
+            ['name' => 'manage account settings'],
+            ['name' => 'manage password settings'],
+            ['name' => 'manage general settings'],
+            ['name' => 'manage company settings'],
            
         ];
         $systemOwnerRole->givePermissionTo($systemOwnerPermission);
