@@ -10,255 +10,7 @@
 
     </ul>
 @endsection
-@push('script-page')
-    <script>
-        "use strict";
-        var options = {
-            series: [{
-                name: "{{__('Total Users')}}",
-                type: 'column',
-                data: {!! json_encode($result['organizationByMonth']['data']) !!},
-            }],
-            chart: {
-                height: 452,
-                type: 'line',
-                toolbar:{
-                    show: false
-                },
-                zoom: {
-                    enabled: false
-                }
-            },
-            legend:{
-                show:false
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                width: [0,0],
-                curve: 'smooth',
-            },
-            plotOptions: {
-                bar: {
-                    columnWidth:"20%",
-                    startingShape:"rounded",
-                    endingShape: "rounded",
-                }
-            },
-            fill:{
-                opacity:[1, 0.08],
-                gradient:{
-                    type:"horizontal",
-                    opacityFrom:0.5,
-                    opacityTo:0.1,
-                    stops: [100, 100, 100]
-                }
-            },
-            colors: [Codexdmeki.themeprimary],
-            states: {
-                normal: {
-                    filter: {
-                        type: 'darken',
-                        value: 1,
-                    }
-                },
-                hover: {
-                    filter: {
-                        type: 'darken',
-                        value: 1,
-                    }
-                },
-                active: {
-                    allowMultipleDataPointsSelection: false,
-                    filter: {
-                        type: 'darken',
-                        value: 1,
-                    }
-                },
-            },
-            grid:{
-                strokeDashArray: 2,
-            },
-
-            yaxis:{
-
-                labels:{
-                    formatter: function (y) {
-                        return   y.toFixed(0);
-                    },
-                    style: {
-                        colors: '#262626',
-                        fontSize: '14px',
-                        fontWeight: 500,
-                        fontFamily: 'Roboto, sans-serif'
-                    }
-                },
-            },
-            xaxis: {
-                categories: {!! json_encode($result['organizationByMonth']['label']) !!},
-                axisTicks: {
-                    show:false
-                },
-                axisBorder:{
-                    show:false
-                },
-                labels:{
-                    style: {
-                        colors: '#262626',
-                        fontSize: '14px',
-                        fontWeight: 500,
-                        fontFamily: 'Roboto, sans-serif'
-                    },
-                },
-            },
-            responsive:[
-                {
-                    breakpoint: 1441,
-                    options:{
-                        chart:{
-                            height: 445
-                        }
-                    },
-                },
-                {
-                    breakpoint: 1366,
-                    options:{
-                        chart:{
-                            height: 320
-                        }
-                    },
-                },
-            ]
-        };
-        var chart = new ApexCharts(document.querySelector("#organization_by_month"), options);
-        chart.render();
-
-
-        var options = {
-            series: [{
-                name: "{{__('Total Payment')}}",
-                type: 'line',
-                data: {!! json_encode($result['paymentByMonth']['data']) !!},
-            }],
-            chart: {
-                height: 452,
-                type: 'line',
-                toolbar:{
-                    show: false
-                },
-                zoom: {
-                    enabled: false
-                }
-            },
-            legend:{
-                show:false
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                width: [0,0],
-                curve: 'smooth',
-            },
-            plotOptions: {
-                bar: {
-                    columnWidth:"20%",
-                    startingShape:"rounded",
-                    endingShape: "rounded",
-                }
-            },
-            fill:{
-                opacity:[1, 0.08],
-                gradient:{
-                    type:"horizontal",
-                    opacityFrom:0.5,
-                    opacityTo:0.1,
-                    stops: [100, 100, 100]
-                }
-            },
-            colors: [Codexdmeki.themeprimary],
-            states: {
-                normal: {
-                    filter: {
-                        type: 'darken',
-                        value: 1,
-                    }
-                },
-                hover: {
-                    filter: {
-                        type: 'darken',
-                        value: 1,
-                    }
-                },
-                active: {
-                    allowMultipleDataPointsSelection: false,
-                    filter: {
-                        type: 'darken',
-                        value: 1,
-                    }
-                },
-            },
-            grid:{
-                strokeDashArray: 2,
-            },
-
-            yaxis:{
-
-                labels:{
-                    formatter: function (y) {
-                        return   y.toFixed(0);
-                    },
-                    style: {
-                        colors: '#262626',
-                        fontSize: '14px',
-                        fontWeight: 500,
-                        fontFamily: 'Roboto, sans-serif'
-                    }
-                },
-            },
-            xaxis: {
-                categories: {!! json_encode($result['paymentByMonth']['label']) !!},
-                axisTicks: {
-                    show:false
-                },
-                axisBorder:{
-                    show:false
-                },
-                labels:{
-                    style: {
-                        colors: '#262626',
-                        fontSize: '14px',
-                        fontWeight: 500,
-                        fontFamily: 'Roboto, sans-serif'
-                    },
-                },
-            },
-            responsive:[
-                {
-                    breakpoint: 1441,
-                    options:{
-                        chart:{
-                            height: 445
-                        }
-                    },
-                },
-                {
-                    breakpoint: 1366,
-                    options:{
-                        chart:{
-                            height: 320
-                        }
-                    },
-                },
-            ]
-        };
-        var chart = new ApexCharts(document.querySelector("#payments_by_month"), options);
-        chart.render();
-
-
-    </script>
-@endpush
+ 
 @section('content')
     <div class="row">
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
@@ -274,27 +26,27 @@
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Total Returned')}}</h4>
+                    <h4>..</h4>
                 </div>
                 <div class="card-body progressCounter">
-                    <h2>{{$result['totalSubscription']}}</h2>
+                    <h2>..</h2>
                 </div>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Total Active')}}</h4>
+                    <h4>..</h4>
                 </div>
                 <div class="card-body progressCounter">
-                    <h2>{{$result['totalTransaction']}}</h2>
+                    <h2>..</h2>
                 </div>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Total Inactive')}}</h4>
+                    <h4>..</h4>
                 </div>
                 <div class="card-body progressCounter">
                     <h2>{{subscriptionPaymentSettings()['CURRENCY_SYMBOL'].$result['totalActiveEmployee']}}</h2>
@@ -304,10 +56,10 @@
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Total Notes')}}</h4>
+                    <h4>..</h4>
                 </div>
                 <div class="card-body progressCounter">
-                    <h2>{{$result['totalNote']}}</h2>
+                    <h2>..</h2>
                 </div>
             </div>
         </div>
@@ -315,10 +67,10 @@
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Total Contact')}}</h4>
+                    <h4>..</h4>
                 </div>
                 <div class="card-body progressCounter">
-                    <h2>{{$result['totalContact']}}</h2>
+                    <h2>..</h2>
                 </div>
             </div>
         </div>
