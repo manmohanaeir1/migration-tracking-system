@@ -8,7 +8,7 @@
     <div class="logo-gridwrap">
         <a class="codexbrand-logo" href="{{route('home')}}">
             <img class="img-fluid"
-                 src="{{asset(url('upload/logo/')).'/'.(isset($admin_logo) && !empty($admin_logo)?$admin_logo:'logo.png')}}"
+                 src="{{asset(Storage::url('upload/logo/')).'/'.(isset($admin_logo) && !empty($admin_logo)?$admin_logo:'logo.png')}}"
                  alt="theeme-logo">
         </a>
         <a class="codex-darklogo" href="{{route('home')}}">
@@ -63,9 +63,10 @@
                                     <a href="{{route('users.index')}}">{{__('Users')}}</a>
                                 </li>
                             @endif
-                            @if(Gate::check('manage logged history'))
-                                <li class="{{in_array ($routeName,['logged.history'])?'active':''}}">
+                            @if(Gate::check('manage logged history') && $subscription->enabled_logged_history==1)
+                                <li class="{{in_array($routeName,['logged.history'])?'active':''}}">
                                     <a href="{{route('logged.history')}}">{{__('Logged History')}}</a>
+                                </li>
                             @endif
                         </ul>
                     </li>

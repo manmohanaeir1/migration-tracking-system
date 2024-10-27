@@ -8,7 +8,7 @@
     <div class="logo-gridwrap">
         <a class="codexbrand-logo" href="<?php echo e(route('home')); ?>">
             <img class="img-fluid"
-                 src="<?php echo e(asset(url('upload/logo/')).'/'.(isset($admin_logo) && !empty($admin_logo)?$admin_logo:'logo.png')); ?>"
+                 src="<?php echo e(asset(Storage::url('upload/logo/')).'/'.(isset($admin_logo) && !empty($admin_logo)?$admin_logo:'logo.png')); ?>"
                  alt="theeme-logo">
         </a>
         <a class="codex-darklogo" href="<?php echo e(route('home')); ?>">
@@ -63,9 +63,10 @@
                                     <a href="<?php echo e(route('users.index')); ?>"><?php echo e(__('Users')); ?></a>
                                 </li>
                             <?php endif; ?>
-                            <?php if(Gate::check('manage logged history')): ?>
-                                <li class="<?php echo e(in_array ($routeName,['logged.history'])?'active':''); ?>">
+                            <?php if(Gate::check('manage logged history') && $subscription->enabled_logged_history==1): ?>
+                                <li class="<?php echo e(in_array($routeName,['logged.history'])?'active':''); ?>">
                                     <a href="<?php echo e(route('logged.history')); ?>"><?php echo e(__('Logged History')); ?></a>
+                                </li>
                             <?php endif; ?>
                         </ul>
                     </li>
@@ -154,5 +155,4 @@
         </ul>
     </div>
 </aside>
-<!-- sidebar end-->
-<?php /**PATH /media/manmohan/D25CA17B5CA15ACD/code&projectsDOC/2081/migration-tracking-system/resources/views/admin/menu.blade.php ENDPATH**/ ?>
+<!-- sidebar end--><?php /**PATH /media/manmohan/D25CA17B5CA15ACD/code&projectsDOC/2081/migration-tracking-system/resources/views/admin/menu.blade.php ENDPATH**/ ?>
