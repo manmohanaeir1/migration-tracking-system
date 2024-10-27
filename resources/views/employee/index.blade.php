@@ -32,17 +32,12 @@
                             <th>{{__('Registration/ID')}}</th>
                             <th>{{__('Foregin Employee Name')}}</th>
                             <th>{{__('Address(Toll))')}}</th>
-                            <th>{{__('Age')}}</th>
-                            <th>{{__('Guardian Name')}}</th>
-                            <th>{{__('Guardian Contact')}}</th>
+                           
                             <th>{{__('Foregin Destination Country/City')}}</th>
                             <th>{{__('Destination Country Contact')}}</th>
                             <th>{{__('Foregin Destination Job')}}</th>
                             <th>{{__('Foregin Job Finding Agent Name')}}</th>
-                            <th>{{__('Foregin Job Finding Agent Contact')}}</th>
-                            <th>{{__('Date of Heading Towards Foregin')}}</th>
-                            <th>{{__('Duration of Foregin Job')}}</th>
-                            <th>{{__('Bank Account')}}</th>
+                           
                             <th>{{__('Skills')}}</th>
                             <th>{{__('Return Date')}}</th>
                             <th>{{__('Remarks')}}</th>
@@ -61,17 +56,12 @@
                                 <td>{{$employee->registration_id}}</td>
                                 <td>{{$employee->foreign_employee_name}}</td>
                                 <td>{{$employee->address}}</td>
-                                <td>{{$employee->age}}</td>
-                                <td>{{$employee->guardian_name}}</td>
-                                <td>{{$employee->guardian_contact}}</td>
+                              
                                 <td>{{$employee->foreign_destination_country_city}}</td>
                                 <td>{{$employee->destination_country_contact}}</td>
                                 <td>{{$employee->foreign_destination_job}}</td>
                                 <td>{{$employee->foreign_job_finding_agent_name}}</td>
-                                <td>{{$employee->foreign_job_finding_agent_contact}}</td>
-                                <td>{{$employee->date_of_heading_towards_foreign}}</td>
-                                <td>{{$employee->duration_of_foreign_job}}</td>
-                                <td>{{$employee->bank_account}}</td>
+                                 
                                 <td>{{$employee->skills}}</td>
                                 <td>{{$employee->return_date}}</td>
                                 <td>{{$employee->remarks}}</td>

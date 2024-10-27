@@ -94,203 +94,7 @@ class DefaultDataUsersTableSeeder extends Seeder
                 'guard_name' => 'web',
 
             ],
-            [
-                'name' => 'manage pricing packages',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'create pricing packages',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'edit pricing packages',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'delete pricing packages',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'buy pricing packages',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage coupon',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'create coupon',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'edit coupon',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'delete coupon',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage coupon history',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'delete coupon history',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage pricing transation',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage account settings',
-                'guard_name' => 'web',
-
-            ],
-            [
-                'name' => 'manage password settings',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage general settings',
-                'guard_name' => 'web',
-
-            ],
-            [
-                'name' => 'manage company settings',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage email settings',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage payment settings',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage seo settings',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage google recaptcha settings',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage parking zone',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'create parking zone',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'edit parking zone',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'delete parking zone',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage vehicle type',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'create vehicle type',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'edit vehicle type',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'delete vehicle type',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage floor',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'create floor',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'edit floor',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'delete floor',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage parking rate',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'create parking rate',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'edit parking rate',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'delete parking rate',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage parking slot',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'create parking slot',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'edit parking slot',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'delete parking slot',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage rfid vehicle',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'create rfid vehicle',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'edit rfid vehicle',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'delete rfid vehicle',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'manage parking',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'create parking',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'edit parking',
-                'guard_name' => 'web',
-            ],
-            [
-                'name' => 'delete parking',
-                'guard_name' => 'web',
-            ], [
-                'name' => 'show parking',
-                'guard_name' => 'web',
-            ],
+            
 
             // fro employee 
             [
@@ -335,24 +139,9 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'create note'],
             ['name' => 'edit note'],
             ['name' => 'delete note'],
-            ['name' => 'manage pricing packages'],
-            ['name' => 'create pricing packages'],
-            ['name' => 'edit pricing packages'],
-            ['name' => 'delete pricing packages'],
-            ['name' => 'manage pricing transation'],
-            ['name' => 'manage coupon'],
-            ['name' => 'create coupon'],
-            ['name' => 'edit coupon'],
-            ['name' => 'delete coupon'],
-            ['name' => 'manage coupon history'],
-            ['name' => 'delete coupon history'],
-            ['name' => 'manage account settings'],
-            ['name' => 'manage password settings'],
-            ['name' => 'manage general settings'],
-            ['name' => 'manage email settings'],
-            ['name' => 'manage payment settings'],
-            ['name' => 'manage seo settings'],
-            ['name' => 'manage google recaptcha settings'],
+            
+
+             
 
 
             // fro employee 
@@ -407,43 +196,7 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'delete note'],
             ['name' => 'manage logged history'],
             ['name' => 'delete logged history'],
-            ['name' => 'manage pricing packages'],
-            ['name' => 'buy pricing packages'],
-            ['name' => 'manage pricing transation'],
-            ['name' => 'manage account settings'],
-            ['name' => 'manage account settings'],
-            ['name' => 'manage password settings'],
-            ['name' => 'manage general settings'],
-            ['name' => 'manage company settings'],
-            ['name' => 'manage parking zone'],
-            ['name' => 'create parking zone'],
-            ['name' => 'edit parking zone'],
-            ['name' => 'delete parking zone'],
-            ['name' => 'manage vehicle type'],
-            ['name' => 'create vehicle type'],
-            ['name' => 'edit vehicle type'],
-            ['name' => 'delete vehicle type'],
-            ['name' => 'manage floor'],
-            ['name' => 'create floor'],
-            ['name' => 'edit floor'],
-            ['name' => 'delete floor'],
-            ['name' => 'manage parking rate'],
-            ['name' => 'create parking rate'],
-            ['name' => 'edit parking rate'],
-            ['name' => 'delete parking rate'],
-            ['name' => 'manage parking slot'],
-            ['name' => 'create parking slot'],
-            ['name' => 'edit parking slot'],
-            ['name' => 'delete parking slot'],
-            ['name' => 'manage rfid vehicle'],
-            ['name' => 'create rfid vehicle'],
-            ['name' => 'edit rfid vehicle'],
-            ['name' => 'delete rfid vehicle'],
-            ['name' => 'manage parking'],
-            ['name' => 'create parking'],
-            ['name' => 'edit parking'],
-            ['name' => 'delete parking'],
-            ['name' => 'show parking'],
+           
         ];
         $systemOwnerRole->givePermissionTo($systemOwnerPermission);
 
@@ -483,35 +236,7 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'create note'],
             ['name' => 'edit note'],
             ['name' => 'delete note'],
-            ['name' => 'manage parking zone'],
-            ['name' => 'create parking zone'],
-            ['name' => 'edit parking zone'],
-            ['name' => 'delete parking zone'],
-            ['name' => 'manage vehicle type'],
-            ['name' => 'create vehicle type'],
-            ['name' => 'edit vehicle type'],
-            ['name' => 'delete vehicle type'],
-            ['name' => 'manage floor'],
-            ['name' => 'create floor'],
-            ['name' => 'edit floor'],
-            ['name' => 'delete floor'],
-            ['name' => 'manage parking rate'],
-            ['name' => 'create parking rate'],
-            ['name' => 'edit parking rate'],
-            ['name' => 'delete parking rate'],
-            ['name' => 'manage parking slot'],
-            ['name' => 'create parking slot'],
-            ['name' => 'edit parking slot'],
-            ['name' => 'delete parking slot'],
-            ['name' => 'manage rfid vehicle'],
-            ['name' => 'create rfid vehicle'],
-            ['name' => 'edit rfid vehicle'],
-            ['name' => 'delete rfid vehicle'],
-            ['name' => 'manage parking'],
-            ['name' => 'create parking'],
-            ['name' => 'edit parking'],
-            ['name' => 'delete parking'],
-            ['name' => 'show parking'],
+            
         ];
         $systemManagerRole->givePermissionTo($systemManagerPermission);
         // Default Manager Create
@@ -539,7 +264,7 @@ class DefaultDataUsersTableSeeder extends Seeder
             'parking_zone_limit' => 10,
             'enabled_logged_history' => 1 ,
         ];
-        \App\Models\Subscription::create($subscriptionData );
+        
     }
 }
 

@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-body progressCounter">
                     <h2>
-                        <span class="count">{{$result['totalSlot']}}</span>
+                        <span class="count">..</span>
                     </h2>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="card-body progressCounter">
                     <h2>
-                        <span class="count">{{$result['availableSlot']}}</span>
+                        <span class="count">..</span>
                     </h2>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="card-body progressCounter">
                     <h2>
-                        <span class="count">{{$result['todayIncome']}}</span>
+                        <span class="count">..</span>
                     </h2>
                 </div>
             </div>

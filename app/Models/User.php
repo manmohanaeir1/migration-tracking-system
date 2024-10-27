@@ -22,9 +22,7 @@ class User extends Authenticatable
         'phone_number',
         'profile',
         'lang',
-        'subscription',
-        'subscription_expire_date',
-        'parent_id',
+         'parent_id',
         'is_active',
     ];
 
@@ -45,10 +43,7 @@ class User extends Authenticatable
         return User::where('parent_id', $this->id)->count();
     }
 
-    public function totalZone()
-    {
-        return Parking::where('parent_id', $this->id)->count();
-    }
+     
 
     public function totalContact()
     {
@@ -79,10 +74,7 @@ class User extends Authenticatable
         }
     }
 
-    public function subscriptions()
-    {
-        return $this->hasOne('App\Models\Subscription','id','subscription');
-    }
+    
 
     public static $systemModules=[
         'user',

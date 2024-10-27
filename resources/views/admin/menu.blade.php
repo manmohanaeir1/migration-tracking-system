@@ -2,8 +2,7 @@
     $admin_logo=getSettingsValByName('company_logo');
     $ids     = parentId();
     $authUser=\App\Models\User::find($ids);
- $subscription = \App\Models\Subscription::find($authUser->subscription);
- $routeName=\Request::route()->getName();
+  $routeName=\Request::route()->getName();
 @endphp
 <aside class="codex-sidebar sidebar-{{$settings['sidebar_mode']}}">
     <div class="logo-gridwrap">
@@ -64,10 +63,9 @@
                                     <a href="{{route('users.index')}}">{{__('Users')}}</a>
                                 </li>
                             @endif
-                            @if(Gate::check('manage logged history') && $subscription->enabled_logged_history==1)
-                                <li class="{{in_array($routeName,['logged.history'])?'active':''}}">
+                            @if(Gate::check('manage logged history'))
+                                <li class="{{in_array ($routeName,['logged.history'])?'active':''}}">
                                     <a href="{{route('logged.history')}}">{{__('Logged History')}}</a>
-                                </li>
                             @endif
                         </ul>
                     </li>

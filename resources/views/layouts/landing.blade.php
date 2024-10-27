@@ -141,7 +141,7 @@
 
     </div>
     <div class="landing_dash">
-        <img class="" src="{{ asset('assets/images/landing/1.png') }}" alt="">
+        <img class="" src="{{ asset('assets/images/landing/1.jpg') }}" alt="">
     </div>
 </section>
 <!-- intro end-->
