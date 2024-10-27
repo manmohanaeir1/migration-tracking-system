@@ -142,15 +142,19 @@ class SettingController extends Controller
             if ($request->logo) {
                 $validator = \Validator::make(
                     $request->all(), [
-                        'logo' => 'required|mimes:png',
-                    ]
+                        /* for png jpeg jpg */
+                       
+                        'logo' => 'required|mimes:jpeg,jpg,png',
+                       
+
+                     ]
                 );
             }
 
             if ($request->landing_logo) {
                 $validator = \Validator::make(
                     $request->all(), [
-                        'landing_logo' => 'required|mimes:png',
+                        'landing_logo' => 'required|mimes:jpeg,jpg,png',
                     ]
                 );
             }
@@ -158,7 +162,7 @@ class SettingController extends Controller
             if ($request->favicon) {
                 $validator = \Validator::make(
                     $request->all(), [
-                        'favicon' => 'required|mimes:png',
+                        'favicon' => 'required|mimes:jpeg,jpg,png',
                     ]
                 );
             }

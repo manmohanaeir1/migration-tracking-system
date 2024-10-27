@@ -9,7 +9,7 @@
     <div class="logo-gridwrap">
         <a class="codexbrand-logo" href="<?php echo e(route('home')); ?>">
             <img class="img-fluid"
-                 src="<?php echo e(asset(Storage::url('upload/logo/')).'/'.(isset($admin_logo) && !empty($admin_logo)?$admin_logo:'logo.png')); ?>"
+                 src="<?php echo e(asset(url('upload/logo/')).'/'.(isset($admin_logo) && !empty($admin_logo)?$admin_logo:'logo.png')); ?>"
                  alt="theeme-logo">
         </a>
         <a class="codex-darklogo" href="<?php echo e(route('home')); ?>">
