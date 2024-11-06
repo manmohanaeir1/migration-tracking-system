@@ -30,17 +30,13 @@
                         <thead>
                         <tr>
                             <th>{{__('Registration/ID')}}</th>
-                            <th>{{__('Foregin Employee Name')}}</th>
+                            <th>{{__('Name')}}</th>
                             <th>{{__('Address(Toll))')}}</th>
                            
                             <th>{{__('Foregin Destination Country/City')}}</th>
-                            <th>{{__('Destination Country Contact')}}</th>
-                            <th>{{__('Foregin Destination Job')}}</th>
-                            <th>{{__('Foregin Job Finding Agent Name')}}</th>
+                             <th>{{__('Foregin Destination Job')}}</th>
+                            
                            
-                            <th>{{__('Skills')}}</th>
-                            <th>{{__('Return Date')}}</th>
-                            <th>{{__('Remarks')}}</th>
                             <th>{{__('Status')}}</th>
 
 
@@ -58,13 +54,9 @@
                                 <td>{{$employee->address}}</td>
                               
                                 <td>{{$employee->foreign_destination_country_city}}</td>
-                                <td>{{$employee->destination_country_contact}}</td>
-                                <td>{{$employee->foreign_destination_job}}</td>
-                                <td>{{$employee->foreign_job_finding_agent_name}}</td>
+                                 <td>{{$employee->foreign_destination_job}}</td>
+                                  
                                  
-                                <td>{{$employee->skills}}</td>
-                                <td>{{$employee->return_date}}</td>
-                                <td>{{$employee->remarks}}</td>
                                 <td>
 
                                     
