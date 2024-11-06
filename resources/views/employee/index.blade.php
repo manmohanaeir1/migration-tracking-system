@@ -14,10 +14,12 @@
 @endsection
 @section('card-action-btn')
     @if(Gate::check('create employee'))
-        <a class="btn btn-primary btn-sm ml-20 customModal" href="#" data-size="xl"
-           data-url="{{ route('employee.create') }}"
-           data-title="{{__('create employee')}}">
-            <i class="ti-plus mr-5"></i>{{__('create employee')}}</a>
+        @if(Auth::user()->hasRole('super admin') || !Auth::user()->employees()->exists())
+            <a class="btn btn-primary btn-sm ml-20 customModal" href="#" data-size="xl"
+               data-url="{{ route('employee.create') }}"
+               data-title="{{__('create employee')}}">
+                <i class="ti-plus mr-5"></i>{{__('create employee')}}</a>
+        @endif
     @endif
 @endsection
 @section('content')

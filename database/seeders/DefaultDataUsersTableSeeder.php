@@ -175,50 +175,6 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'edit note'],
             ['name' => 'delete note'],
             
-            
-
-            // fro employee 
-            ['name' => 'manage employee'],
-            ['name' => 'create employee'],
-            ['name' => 'edit employee'],
-            ['name' => 'delete employee'],  
-            ['name' => 'show employee'],    
-
-            ['name' => 'manage account settings'],
-            ['name' => 'manage password settings'],
-            ['name' => 'manage general settings'],
-            ['name' => 'manage email settings'],
-            ['name' => 'manage payment settings'],
-            ['name' => 'manage seo settings'],
-            ['name' => 'manage google recaptcha settings'],
-
-
-            
-
-        ];
-        $systemSuperAdminRole->givePermissionTo($systemSuperAdminPermission);
-        // Default Super Admin
-        $superAdminData=      [
-            'name' => 'Super Admin',
-            'email' => 'superadmin@gmail.com',
-            'password' => Hash::make('123456'),
-            'type' => 'super admin',
-            'lang' => 'english',
-            'profile' => 'avatar.png',
-            'parent_id' => 0,
-        ];
-        $systemSuperAdmin = User::create($superAdminData );
-        $systemSuperAdmin->assignRole($systemSuperAdminRole);
-
-        // Default Owner Role
-        $ownerRoleData= [
-            'name' => 'owner',
-            'parent_id' => $systemSuperAdmin->id,
-        ];
-        $systemOwnerRole = Role::create($ownerRoleData);
-
-        // Default Owner All Permissions
-        $systemOwnerPermission = [
             ['name' => 'manage user'],
             ['name' => 'create user'],
             ['name' => 'edit user'],
@@ -243,30 +199,84 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'manage password settings'],
             ['name' => 'manage general settings'],
             ['name' => 'manage company settings'],
-           
+
+            // fro employee 
+            ['name' => 'manage employee'],
+            ['name' => 'create employee'],
+            ['name' => 'edit employee'],
+            ['name' => 'delete employee'],  
+            ['name' => 'show employee'],    
+
+            ['name' => 'manage account settings'],
+            ['name' => 'manage password settings'],
+            ['name' => 'manage general settings'],
+            ['name' => 'manage email settings'],
+            ['name' => 'manage payment settings'],
+            ['name' => 'manage seo settings'],
+            ['name' => 'manage google recaptcha settings'],
+
+
+            ['name' => 'delete user'],
+            ['name' => 'manage role'],
+            ['name' => 'create role'],
+            ['name' => 'edit role'],
+
+            ['name' => 'manage logged history'],
+            ['name' => 'delete logged history'],
         ];
-        $systemOwnerRole->givePermissionTo($systemOwnerPermission);
+        $systemSuperAdminRole->givePermissionTo($systemSuperAdminPermission);
+        // Default Super Admin
+        $superAdminData=      [
+            'name' => 'Super Admin',
+            'email' => 'superadmin@gmail.com',
+            'password' => Hash::make('123456'),
+            'type' => 'super admin',
+            'lang' => 'english',
+            'profile' => 'avatar.png',
+            'parent_id' => 0,
+        ];
+        $systemSuperAdmin = User::create($superAdminData );
+        $systemSuperAdmin->assignRole($systemSuperAdminRole);
+
+        // Default Owner Role
+        $useroleData= [
+            'name' => 'user',
+            'parent_id' => $systemSuperAdmin->id,
+        ];
+        $systemUserRole = Role::create($useroleData);
+
+        // Default Owner All Permissions
+        $systemUserPermission = [
+             
+            ['name' => 'manage employee'],
+            ['name' => 'create employee'],
+            ['name' => 'edit employee'],
+            ['name' => 'delete employee'],  
+            ['name' => 'show employee'],    
+             
+        ];
+        $systemUserRole->givePermissionTo($systemUserPermission);
 
         // Default Owner Create
-        $ownerData=    [
-            'name' => 'Owner',
-            'email' => 'owner@gmail.com',
+        $userData=    [
+            'name' => 'user',
+            'email' => 'user@gmail.com',
             'password' => Hash::make('123456'),
-            'type' => 'owner',
+            'type' => 'user',
             'lang' => 'english',
             'profile' => 'avatar.png',
             'subscription' => 1,
             'parent_id' => $systemSuperAdmin->id,
         ];
-        $systemOwner = User::create($ownerData);
-        // Default Owner Role Assign
-        $systemOwner->assignRole($systemOwnerRole);
+        $systemUser = User::create($userData);
+        // Default user Role Assign
+        $systemUser->assignRole($systemUserRole);
 
 
         // Default Owner Role
         $managerRoleData=  [
             'name' => 'manager',
-            'parent_id' => $systemOwner->id,
+            'parent_id' => $systemUser->id,
         ];
         $systemManagerRole = Role::create($managerRoleData);
         // Default Manager All Permissions
@@ -295,7 +305,7 @@ class DefaultDataUsersTableSeeder extends Seeder
             'lang' => 'english',
             'profile' => 'avatar.png',
             'subscription' => 0,
-            'parent_id' => $systemOwner->id,
+            'parent_id' => $systemUser->id,
         ];
         $systemManager = User::create($managerData);
         // Default Manager Role Assign
@@ -303,14 +313,7 @@ class DefaultDataUsersTableSeeder extends Seeder
 
 
         // Subscription default data
-        $subscriptionData=[
-            'title' => 'Basic',
-            'package_amount' => 0,
-            'interval' => 'Unlimited',
-            'user_limit' => 10,
-            'parking_zone_limit' => 10,
-            'enabled_logged_history' => 1 ,
-        ];
+         
         
     }
 }

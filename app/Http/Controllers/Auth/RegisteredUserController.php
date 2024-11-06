@@ -52,14 +52,14 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'type' => 'owner',
+            'type' => 'user',
             'lang' => 'english',
             'subscription' => 1,
             'parent_id' => 1,
         ]);
 
         event(new Registered($user));
-        $role_r = Role::findByName('owner');
+        $role_r = Role::findByName('user');
         $user->assignRole($role_r);
         Auth::login($user);
 

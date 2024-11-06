@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-                 
+            
             $table->string('registration_id');
             $table->string('foreign_employee_name');
             $table->string('address');
@@ -34,7 +34,11 @@ return new class extends Migration
             $table->string('return_date');
             $table->string('remarks');
             $table->string('status')->default(1);
+            
+                        $table->unsignedBigInteger('user_id')->nullable();
+
              $table->timestamps();
+
         });
     }
 

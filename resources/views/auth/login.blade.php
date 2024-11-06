@@ -62,7 +62,16 @@
                        href="{{ route('password.request') }}">{{__('Forgot your password?')}}</a>
                 @endif
             </div>
+            
         </div>
+        <div class="row">
+            <div class="col-md-12">
+              <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
+                Login with <img width="80px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
+
+              </a>
+            </div>
+          </div>
         @if ($settings['google_recaptcha'] == 'on')
             <div class="form-group">
                 <label for="email" class="form-label"></label>

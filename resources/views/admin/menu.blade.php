@@ -37,16 +37,8 @@
                 </a>
             </li>
             @if(\Auth::user()->type=='super admin')
-                @if(Gate::check('manage user'))
-                    <li class="menu-item {{in_array($routeName,['users.index'])?'active':''}}">
-                        <a href="{{route('users.index')}}">
-                            <div class="icon-item"><i data-feather="users"></i></div>
-                            <span>{{__('Users')}}</span>
-                        </a>
-                    </li>
-                @endif
-            @else
                 @if(Gate::check('manage user') || Gate::check('manage role') || Gate::check('manage logged history') )
+                    
                     <li class="menu-item {{in_array($routeName,['users.index','logged.history','role.index','role.create','role.edit'])?'active':''}}">
                         <a href="javascript:void(0);">
                             <div class="icon-item"><i data-feather="users"></i></div>
@@ -71,10 +63,10 @@
                             @endif
                         </ul>
                     </li>
-                @endif
+                @endif      
             @endif
 
-            @if( Gate::check('manage employee')  ||  Gate::check('manage parking') || Gate::check('manage contact') || Gate::check('manage support') || Gate::check('manage note') )
+            @if( Gate::check('manage employee')  || Gate::check('manage contact') || Gate::check('manage support') || Gate::check('manage note') )
                 <li class="cdxmenu-title">
                     <h5>{{__('Employee Management')}}</h5>
                 </li>

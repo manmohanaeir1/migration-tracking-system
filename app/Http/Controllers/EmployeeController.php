@@ -16,7 +16,11 @@ class EmployeeController extends Controller
     {
        
         if (\Auth::user()->can('manage employee')) {
+            if (\Auth::user()->hasRole('super admin')) {
                 $employees = Employee::all();
+            } else {
+                $employees = Employee::where('user_id', \Auth::id())->get();
+            }
             return view('employee.index', compact('employees'));
         } else {
             return redirect()->back()->with('error', __('Permission denied.'));
@@ -94,6 +98,8 @@ class EmployeeController extends Controller
             $employee->return_date = $request->return_date;
             $employee->remarks = $request->remarks;
             $employee->status = $request->status;
+            $employee->user_id = \Auth::id(); // Set the user ID
+
             $employee->save();
 
             return redirect()->back()->with('success', __('Employee successfully created.'));
