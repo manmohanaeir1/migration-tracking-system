@@ -121,6 +121,23 @@ class SettingController extends Controller
 
     //    ---------------------- General --------------------------------------------------------
 
+    public function generalSetting()
+    {
+        $loginUser = \Auth::user();
+        
+        // Define paths for the images based on the stored filenames
+        $logoPath = asset('upload/logo/logo.png');
+        $landingLogoPath = asset('upload/logo/landing_logo.png');
+        $faviconPath = asset('upload/logo/favicon.png');
+        
+    
+        return view('admin.menu', compact('loginUser', 'logoPath', 'landingLogoPath', 'faviconPath'));
+
+        dd("logoPath") ; 
+    }
+
+    
+
     public function general()
     {
         $loginUser = \Auth::user();
