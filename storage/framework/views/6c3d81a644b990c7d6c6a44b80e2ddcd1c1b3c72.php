@@ -71,14 +71,22 @@
                     <h5><?php echo e(__('Employee Management')); ?></h5>
                 </li>
                 <?php if(Gate::check('manage employee')): ?>
-                    <li class="menu-item <?php echo e(in_array($routeName,['employee.index'])?'active':''); ?>">
+                <?php if(Auth::user()->hasRole('super admin')): ?>
+                    <li class="menu-item <?php echo e(in_array($routeName, ['employee.index']) ? 'active' : ''); ?>">
                         <a href="<?php echo e(route('employee.index')); ?>">
                             <div class="icon-item"><i data-feather="file-text"></i></div>
                             <span><?php echo e(__('Employee')); ?></span>
                         </a>
                     </li>
+                <?php else: ?>
+                    <li class="menu-item <?php echo e(in_array($routeName, ['employee.index']) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('employee.index', Auth::user()->id)); ?>">
+                            <div class="icon-item"><i data-feather="file-text"></i></div>
+                            <span><?php echo e(__('Your Details')); ?></span>
+                        </a>
+                    </li>
                 <?php endif; ?>
-                
+            <?php endif; ?>
                                  
                 <?php if(Gate::check('manage contact')): ?>
                     <li class="menu-item <?php echo e(in_array($routeName,['contact.index'])?'active':''); ?>">

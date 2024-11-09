@@ -18,7 +18,8 @@
             <a class="btn btn-primary btn-sm ml-20 customModal" href="#" data-size="xl"
                data-url="{{ route('employee.create') }}"
                data-title="{{__('create employee')}}">
-                <i class="ti-plus mr-5"></i>{{__('create employee')}}</a>
+                <i class="ti-plus mr-5"></i>{{__('')}}</a>
+                     
         @endif
     @endif
 @endsection
