@@ -26,6 +26,11 @@ class User extends Authenticatable
         'is_active',
     ];
 
+    public function employees()
+    {
+        return $this->hasMany(Employee::class);
+    }
+
 
     protected $hidden = [
         'password',

@@ -65,42 +65,11 @@ Route::resource('users', UserController::class)->middleware(
 );
 
 
-//-------------------------------Subscription-------------------------------------------
-
-
-
-Route::group(
-    [
-        'middleware' => [
-            'auth',
-            'XSS',
-        ],
-    ], function (){
-
-    Route::resource('subscriptions', SubscriptionController::class);
-    Route::get('coupons/history', [CouponController::class,'history'])->name('coupons.history');
-    Route::delete('coupons/history/{id}/destroy', [CouponController::class,'historyDestroy'])->name('coupons.history.destroy');
-    Route::get('coupons/apply', [CouponController::class, 'apply'])->name('coupons.apply');
-    Route::resource('coupons', CouponController::class);
-    Route::get('subscription/transaction', [SubscriptionController::class,'transaction'])->name('subscription.transaction');
-}
-);
+ 
 
 //-------------------------------Subscription Payment-------------------------------------------
 
-Route::group(
-    [
-        'middleware' => [
-            'auth',
-            'XSS',
-        ],
-    ], function (){
-
-    Route::post('subscription/{id}/stripe/payment', [SubscriptionController::class,'stripePayment'])->name('subscription.stripe.payment');
-}
-);
-//-------------------------------Settings-------------------------------------------
-Route::group(
+ Route::group(
     [
         'middleware' => [
             'auth',
