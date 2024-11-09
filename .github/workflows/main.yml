@@ -16,6 +16,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftp.brixtondiary.com
-        username: brixton3@ets.brixtoncollege.edu.np
-        password: $brixton3
+        username: brixton2
+        password: $Admin2024x 
         server-dir: /public_html/man/
