@@ -15,7 +15,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ftpupload.net
-        username: epiz_32032329
-        password: 00X4G6EahnP2br 
-        server-dir: /htdocs/
+        server: ftp.brixtondiary.com
+        username: brixton2
+        password: $Admin2024x 
+        server-dir: /ets.brixtoncollege.edu.np/
