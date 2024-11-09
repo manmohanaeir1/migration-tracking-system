@@ -22,11 +22,12 @@ class HomeController extends Controller
             if (\Auth::user()->type == 'super admin') {
                   $result['totalEmployee'] = Employee::count();
                 // make for total active employ check active 
-                $result['totalActiveEmployee'] = Employee::where('status',1)->count();
-                
+                   
+                $result['activeEmployee'] = Employee::where('status', '1')->count();
+                $result['inactiveEmployee'] = Employee::where('status', '0')->count();          
 
-            
-                return view('dashboard.super_admin', compact('result'));
+        
+            return view('dashboard.super_admin', compact('result'));
             } else {
                 
                 $result['totalEmployee'] = Employee::count();

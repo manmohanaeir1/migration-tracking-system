@@ -71,22 +71,14 @@
                     <h5>{{__('Employee Management')}}</h5>
                 </li>
                 @if(Gate::check('manage employee'))
-                @if(Auth::user()->hasRole('super admin'))
-                    <li class="menu-item {{ in_array($routeName, ['employee.index']) ? 'active' : '' }}">
-                        <a href="{{ route('employee.index') }}">
+                    <li class="menu-item {{in_array($routeName,['employee.index'])?'active':''}}">
+                        <a href="{{route('employee.index')}}">
                             <div class="icon-item"><i data-feather="file-text"></i></div>
-                            <span>{{ __('Employee') }}</span>
-                        </a>
-                    </li>
-                @else
-                    <li class="menu-item {{ in_array($routeName, ['employee.index']) ? 'active' : '' }}">
-                        <a href="{{ route('employee.index', Auth::user()->id) }}">
-                            <div class="icon-item"><i data-feather="file-text"></i></div>
-                            <span>{{ __('Your Details') }}</span>
+                            <span>{{__('Employee')}}</span>
                         </a>
                     </li>
                 @endif
-            @endif
+                
                                  
                 @if(Gate::check('manage contact'))
                     <li class="menu-item {{in_array($routeName,['contact.index'])?'active':''}}">

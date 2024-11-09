@@ -17,7 +17,7 @@
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4><?php echo e(__('Total Foreign Employees')); ?></h4>
+                    <h4><?php echo e(__('Announcement')); ?></h4>
                 </div>
                 <div class="card-body progressCounter">
                     <h2>
@@ -26,49 +26,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4><?php echo e(__('Active')); ?></h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2>
-                        <span class="count">..</span>
-                    </h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4><?php echo e(__('Inactive')); ?></h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2>
-                        <span class="count">..</span>
-                    </h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4><?php echo e(__('Returned Employee')); ?></h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2>
-                        <span class="count">..</span>
-                    </h2>
-                </div>
-            </div>
-        </div>
-      
+        
 
     </div>
 
 <?php $__env->stopSection(); ?>
 
-
+ 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/manmohan/Desktop/migration-tracking-system/resources/views/dashboard/index.blade.php ENDPATH**/ ?>
