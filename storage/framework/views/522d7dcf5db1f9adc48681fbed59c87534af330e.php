@@ -11,6 +11,9 @@
 <!-- Theme Customizer-->
 <script src="<?php echo e(asset('assets/js/layout-storage.js')); ?>"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="<?php echo e(asset('assets/js/chart.js')); ?>"></script>
+
 <?php if(\Auth::user()->type=='super admin' || \Auth::user()->type=='owner'): ?>
     <script>
         var public_path='<?php echo e(asset('assets/css/')); ?>';

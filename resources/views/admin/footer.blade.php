@@ -11,6 +11,9 @@
 <!-- Theme Customizer-->
 <script src="{{ asset('assets/js/layout-storage.js') }}"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ asset('assets/js/chart.js') }}"></script>
+
 @if(\Auth::user()->type=='super admin' || \Auth::user()->type=='owner')
     <script>
         var public_path='{{asset('assets/css/')}}';
