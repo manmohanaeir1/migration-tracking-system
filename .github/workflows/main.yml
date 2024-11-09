@@ -1,7 +1,7 @@
 on: 
   push:
     branches:
-      - mian
+      - main
       
 name:  🚀 Deploy website on push
 jobs:
@@ -16,6 +16,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftp.brixtondiary.com
-        username: brixton2
-        password: $Admin2024x 
+        username: brixton3@brixtondiary.com
+        password: $Admin2024x
         server-dir: /public_html/man/
