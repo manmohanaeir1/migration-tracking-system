@@ -44,4 +44,5 @@ class XSS
         $request->merge($data);
         return $next($request);
     }
-}
+
+ }
