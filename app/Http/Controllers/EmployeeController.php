@@ -118,7 +118,11 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        //
+        if (\Auth::user()->can('show employee')) {
+            return view('employee.show', compact('employee'));
+        } else {
+            return redirect()->back()->with('error', __('Permission denied.'));
+        } 
     }
 
     /**
@@ -209,6 +213,11 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        if (\Auth::user()->can('delete employee')) {
+            $employee->delete();
+            return redirect()->back()->with('success', __('Employee successfully deleted.'));
+        } else {
+            return redirect()->back()->with('error', __('Permission denied.'));
+        }   
     }
 }

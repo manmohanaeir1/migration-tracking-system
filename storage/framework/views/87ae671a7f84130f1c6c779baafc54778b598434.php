@@ -18,7 +18,8 @@
             <a class="btn btn-primary btn-sm ml-20 customModal" href="#" data-size="xl"
                data-url="<?php echo e(route('employee.create')); ?>"
                data-title="<?php echo e(__('create employee')); ?>">
-                <i class="ti-plus mr-5"></i><?php echo e(__('create employee')); ?></a>
+                <i class="ti-plus mr-5"></i><?php echo e(__('')); ?></a>
+                     
         <?php endif; ?>
     <?php endif; ?>
 <?php $__env->stopSection(); ?>

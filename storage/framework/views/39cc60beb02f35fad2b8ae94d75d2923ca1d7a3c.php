@@ -16,68 +16,40 @@
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4><?php echo e(__('Total Foreign Employees')); ?></h4>
+                    <h4><?php echo e(__('Total  ')); ?></h4>
                 </div>
                 <div class="card-body progressCounter">
+                    <i data-feather="user"></i> <!-- Man icon -->
                     <h2><?php echo e($result['totalEmployee']); ?></h2>
                 </div>
             </div>
         </div>
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>..</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2>..</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>..</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2>..</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>..</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2><?php echo e(subscriptionPaymentSettings()['CURRENCY_SYMBOL'].$result['totalActiveEmployee']); ?></h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>..</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2>..</h2>
-                </div>
-            </div>
-        </div>
 
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>..</h4>
+                    <h4><?php echo e(__('Active  ')); ?></h4>
                 </div>
                 <div class="card-body progressCounter">
-                    <h2>..</h2>
+                    <i data-feather="user"></i> <!-- Man icon -->
+                    <h2><?php echo e($result['activeEmployee']); ?></h2>
                 </div>
             </div>
         </div>
-
-
-
+        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
+            <div class="card sale-revenue">
+                <div class="card-header">
+                    <h4><?php echo e(__('Inactive  ')); ?></h4>
+                </div>
+                <div class="card-body progressCounter">
+                    <i data-feather="user"></i> <!-- Man icon -->
+                    <h2><?php echo e($result['inactiveEmployee']); ?></h2>
+                </div>
+            </div>
+        </div>
         
+
+ 
     </div>
 <?php $__env->stopSection(); ?>
 

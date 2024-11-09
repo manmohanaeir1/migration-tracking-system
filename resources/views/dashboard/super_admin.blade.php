@@ -16,86 +16,39 @@
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Total Foreign Employees')}}</h4>
+                    <h4>{{__('Total  ')}}</h4>
                 </div>
                 <div class="card-body progressCounter">
+                    <i data-feather="user"></i> <!-- Man icon -->
                     <h2>{{$result['totalEmployee']}}</h2>
                 </div>
             </div>
         </div>
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>..</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2>..</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>..</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2>..</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>..</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2>{{subscriptionPaymentSettings()['CURRENCY_SYMBOL'].$result['totalActiveEmployee']}}</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>..</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <h2>..</h2>
-                </div>
-            </div>
-        </div>
 
         <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
             <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>..</h4>
+                    <h4>{{__('Active  ')}}</h4>
                 </div>
                 <div class="card-body progressCounter">
-                    <h2>..</h2>
+                    <i data-feather="user"></i> <!-- Man icon -->
+                    <h2>{{$result['activeEmployee']}}</h2>
                 </div>
             </div>
         </div>
-
-
-
-        {{-- <div class="col-xxl-12 cdx-xxl-50">
-            <div class="card overall-revenuetbl">
+        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
+            <div class="card sale-revenue">
                 <div class="card-header">
-                    <h4>{{__('Users By Month')}}</h4>
+                    <h4>{{__('Inactive  ')}}</h4>
                 </div>
-                <div class="card-body">
-                    <div id="organization_by_month"></div>
+                <div class="card-body progressCounter">
+                    <i data-feather="user"></i> <!-- Man icon -->
+                    <h2>{{$result['inactiveEmployee']}}</h2>
                 </div>
             </div>
         </div>
-        <div class="col-xxl-12 cdx-xxl-50">
-            <div class="card overall-revenuetbl">
-                <div class="card-header">
-                    <h4>{{__('Payments By Month')}}</h4>
-                </div>
-                <div class="card-body">
-                    <div id="payments_by_month"></div>
-                </div>
-            </div>
-        </div> --}}
+        
+
+ 
     </div>
 @endsection
