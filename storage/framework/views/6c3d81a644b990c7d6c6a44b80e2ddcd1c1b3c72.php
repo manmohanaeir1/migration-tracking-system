@@ -99,6 +99,30 @@
                 <?php endif; ?>
 
             <?php endif; ?>
+
+            
+
+
+            <?php if(Gate::check('manage job')): ?>
+            <li class="cdxmenu-title">
+                <h5><?php echo e(__('Job Management')); ?></h5>
+            </li>
+            <?php if(Gate::check('manage job')): ?>
+                <li class="menu-item <?php echo e(in_array($routeName,['job.index'])?'active':''); ?>">
+                    <a href="<?php echo e(route('job.index')); ?>">
+                        <div class="icon-item"><i data-feather="file-text"></i></div>
+                        <span><?php echo e(__('Job')); ?></span>
+                    </a>    
+                </li>
+            <?php endif; ?>
+            <?php endif; ?>
+
+                 
+                             
+            
+ 
+
+        
            
             <?php if(Gate::check('manage pricing packages') || Gate::check('manage pricing transation') || Gate::check('manage account settings') || Gate::check('manage password settings') || Gate::check('manage general settings') || Gate::check('manage company settings')): ?>
                 <li class="cdxmenu-title">

@@ -152,6 +152,28 @@ class DefaultDataUsersTableSeeder extends Seeder
                 'name' => 'manage google recaptcha settings',
                 'guard_name' => 'web',
             ],
+
+            // for jobs 
+            [
+                'name' => 'manage job',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'create job',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'edit job',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'delete job',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'show job',
+                'guard_name' => 'web',
+            ],
         ];
         Permission::insert($allPermissions);
 
@@ -223,6 +245,13 @@ class DefaultDataUsersTableSeeder extends Seeder
 
             ['name' => 'manage logged history'],
             ['name' => 'delete logged history'],
+
+            // for jobs 
+            ['name' => 'manage job'],
+            ['name' => 'create job'],
+            ['name' => 'edit job'],
+            ['name' => 'delete job'],
+            ['name' => 'show job'],
         ];
         $systemSuperAdminRole->givePermissionTo($systemSuperAdminPermission);
         // Default Super Admin
@@ -252,7 +281,12 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'create employee'],
             ['name' => 'edit employee'],
             ['name' => 'delete employee'],  
-            ['name' => 'show employee'],    
+            ['name' => 'show employee'],   
+            // show job 
+
+             
+            ['name' => 'show job'],
+
              
         ];
         $systemUserRole->givePermissionTo($systemUserPermission);

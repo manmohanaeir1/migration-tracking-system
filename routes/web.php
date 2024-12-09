@@ -9,18 +9,10 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\NoticeBoardController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\CouponController;
-use App\Http\Controllers\ParkingZoneController;
-use App\Http\Controllers\VehicleTypeController;
-use App\Http\Controllers\FloorController;
-use App\Http\Controllers\ParkingRateController;
-use App\Http\Controllers\ParkingSlotController;
-use App\Http\Controllers\RfidVehicleController;
-use App\Http\Controllers\ParkingController;
-use App\Http\Controllers\PaymentController;
 
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\JobController;
 
 
 /*
@@ -245,25 +237,9 @@ Route::resource('rfid-vehicle', RfidVehicleController::class)->middleware(
     ]
 );
 
-//-------------------------------Parking-------------------------------------------
+ 
 
-
-Route::group(
-    [
-        'middleware' => [
-            'auth',
-            'XSS',
-        ],
-    ], function () {
-
-    Route::resource('parking', ParkingController::class);
-    Route::get('parking/zone/{zid}/floor/{fid}/type/{tid}', [ParkingController::class,'getSlot'])->name('parking.zone.floor.slot');
-    Route::get('parking/{id}/exit/{amount}', [ParkingController::class,'exitVehicle'])->name('parking.exit.vehicle');
-    Route::post('parking/{id}/exit', [ParkingController::class,'exitVehicleData'])->name('exit.vehicle.store');
-    Route::get('parked/vehicle', [ParkingController::class,'parkedVehicle'])->name('parked.vehicle');
-    Route::get('parking/{id}/thermal/print', [ParkingController::class,'thermalPrint'])->name('parking.thermal.print');
-});
-
+ 
 
 
 // Employee management create edit delete 
@@ -280,6 +256,22 @@ Route::group(
     
 });
 
+//for job posting
+Route::group(
+    [
+        'middleware' => [
+            'auth',
+            'XSS',
+        ],
+    ], function () {
+
+    Route::resource('job', JobController::class);
+    
+});
+ 
+
+// job showing in
+
 
 
 Route::resource('employee', EmployeeController::class)->middleware(
@@ -288,20 +280,5 @@ Route::resource('employee', EmployeeController::class)->middleware(
         'XSS',
     ]
 );
-
-//-------------------------------Plan Payment-------------------------------------------
-
-Route::group(
-    [
-        'middleware' => [
-            'auth',
-            'XSS',
-        ],
-    ], function (){
-
-    Route::post('subscription/{id}/bank-transfer', [PaymentController::class, 'subscriptionBankTransfer'])->name('subscription.bank.transfer');
-    Route::get('subscription/{id}/bank-transfer/action/{status}', [PaymentController::class, 'subscriptionBankTransferAction'])->name('subscription.bank.transfer.action');
-    Route::post('subscription/{id}/paypal', [PaymentController::class, 'subscriptionPaypal'])->name('subscription.paypal');
-    Route::get('subscription/{id}/paypal/{status}', [PaymentController::class, 'subscriptionPaypalStatus'])->name('subscription.paypal.status');
-}
-);
+ 
+ 
