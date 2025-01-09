@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('page-title')
-    {{__('Note')}}
+    {{__('Announcement')}}
 @endsection
 @section('breadcrumb')
     <ul class="breadcrumb mb-0">
@@ -8,15 +8,15 @@
             <a href="{{route('dashboard')}}"><h1>{{__('Dashboard')}}</h1></a>
         </li>
         <li class="breadcrumb-item active">
-            <a href="#">{{__('Note')}}</a>
+            <a href="#">{{__('Announcement')}}</a>
         </li>
     </ul>
 @endsection
 @section('card-action-btn')
-    @if(Gate::check('create note') || \Auth::user()->type=='super admin')
+    @if(\Auth::user()->type == 'super admin')
         <a class="btn btn-primary btn-sm ml-20 customModal" href="#" data-size="md"
            data-url="{{ route('note.create') }}"
-           data-title="{{__('Create New Note')}}"> <i class="ti-plus mr-5"></i>{{__('Create Note')}}</a>
+           data-title="{{ __('Create New Announcement') }}"> <i class="ti-plus mr-5"></i>{{ __('Create Announcement') }}</a>
     @endif
 @endsection
 @section('content')
@@ -30,7 +30,7 @@
                             <th>{{__('Title')}}</th>
                             <th>{{__('Description')}}</th>
                             <th>{{__('Created At')}}</th>
-                            @if(Gate::check('edit note') || Gate::check('delete note') || \Auth::user()->type=='super admin')
+                            @if(Gate::check('edit note') || Gate::check('delete note') ||  Gate::check('show note')|| \Auth::user()->type=='super admin')
                                 <th>{{__('Action')}}</th>
                             @endif
                         </tr>

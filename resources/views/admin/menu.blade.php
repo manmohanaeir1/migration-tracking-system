@@ -79,7 +79,17 @@
                     </li>
                 @endif
                 
-                                 
+                @if(Gate::check('manage note'))
+                    <li class="menu-item {{ in_array($routeName, ['note.index']) ? 'active' : '' }}">
+                        <a href="{{ route('note.index') }}">
+                            <div class="icon-item"><i data-feather="file-text"></i></div>
+                            <span>{{ __('Announcement') }}</span>
+                        </a>
+                    </li>   
+                @endif
+                
+                
+             
                 @if(Gate::check('manage contact'))
                     <li class="menu-item {{in_array($routeName,['contact.index'])?'active':''}}">
                         <a href="{{route('contact.index')}}">
@@ -89,33 +99,13 @@
                     </li>
                 @endif
 
-                @if(Gate::check('manage note'))
-                    <li class="menu-item {{in_array($routeName,['note.index'])?'active':''}} ">
-                        <a href="{{route('note.index')}}">
-                            <div class="icon-item"><i data-feather="file-text"></i></div>
-                            <span>{{__('Note')}}</span>
-                        </a>
-                    </li>
-                @endif
-
+               
             @endif
 
             {{-- end --}}
 
 
-            @if(Gate::check('manage job'))
-            <li class="cdxmenu-title">
-                <h5>{{__('Job Management')}}</h5>
-            </li>
-            @if(Gate::check('manage job'))
-                <li class="menu-item {{in_array($routeName,['job.index'])?'active':''}}">
-                    <a href="{{route('job.index')}}">
-                        <div class="icon-item"><i data-feather="file-text"></i></div>
-                        <span>{{__('Job')}}</span>
-                    </a>    
-                </li>
-            @endif
-            @endif
+            
 
                  
                              

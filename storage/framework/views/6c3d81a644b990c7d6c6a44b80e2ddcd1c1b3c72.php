@@ -79,7 +79,17 @@
                     </li>
                 <?php endif; ?>
                 
-                                 
+                <?php if(Gate::check('manage note')): ?>
+                    <li class="menu-item <?php echo e(in_array($routeName, ['note.index']) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('note.index')); ?>">
+                            <div class="icon-item"><i data-feather="file-text"></i></div>
+                            <span><?php echo e(__('Announcement')); ?></span>
+                        </a>
+                    </li>   
+                <?php endif; ?>
+                
+                
+             
                 <?php if(Gate::check('manage contact')): ?>
                     <li class="menu-item <?php echo e(in_array($routeName,['contact.index'])?'active':''); ?>">
                         <a href="<?php echo e(route('contact.index')); ?>">
@@ -89,33 +99,13 @@
                     </li>
                 <?php endif; ?>
 
-                <?php if(Gate::check('manage note')): ?>
-                    <li class="menu-item <?php echo e(in_array($routeName,['note.index'])?'active':''); ?> ">
-                        <a href="<?php echo e(route('note.index')); ?>">
-                            <div class="icon-item"><i data-feather="file-text"></i></div>
-                            <span><?php echo e(__('Note')); ?></span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-
+               
             <?php endif; ?>
 
             
 
 
-            <?php if(Gate::check('manage job')): ?>
-            <li class="cdxmenu-title">
-                <h5><?php echo e(__('Job Management')); ?></h5>
-            </li>
-            <?php if(Gate::check('manage job')): ?>
-                <li class="menu-item <?php echo e(in_array($routeName,['job.index'])?'active':''); ?>">
-                    <a href="<?php echo e(route('job.index')); ?>">
-                        <div class="icon-item"><i data-feather="file-text"></i></div>
-                        <span><?php echo e(__('Job')); ?></span>
-                    </a>    
-                </li>
-            <?php endif; ?>
-            <?php endif; ?>
+            
 
                  
                              

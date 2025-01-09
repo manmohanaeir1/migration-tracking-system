@@ -10,13 +10,10 @@ class NoticeBoardController extends Controller
 
     public function index()
     {
-        if (\Auth::user()->can('manage note')) {
-            $notes = NoticeBoard::where('parent_id', \Auth::user()->id)->get();
+        // Fetch all notes
+        $notes = NoticeBoard::all();
 
-            return view('note.index', compact('notes'));
-        } else {
-            return redirect()->back()->with('error', __('Permission denied.'));
-        }
+        return view('note.index', compact('notes'));
     }
 
 

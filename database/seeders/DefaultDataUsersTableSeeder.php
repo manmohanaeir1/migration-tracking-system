@@ -83,7 +83,19 @@ class DefaultDataUsersTableSeeder extends Seeder
             [
                 'name' => 'delete note',
                 'guard_name' => 'web',
+
             ],
+            [
+                'name' => 'show note',
+                'guard_name' => 'web',
+
+            ],
+            [
+                'name' => 'manage logged history',
+                'guard_name' => 'web',
+
+            ],
+
             [
                 'name' => 'manage logged history',
                 'guard_name' => 'web',
@@ -252,6 +264,14 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'edit job'],
             ['name' => 'delete job'],
             ['name' => 'show job'],
+
+            // for announcement 
+            ['name' => 'manage note'],
+            ['name' => 'create note'],
+            ['name' => 'edit note'],
+            ['name' => 'delete note'],
+            ['name' => 'show note'],   
+
         ];
         $systemSuperAdminRole->givePermissionTo($systemSuperAdminPermission);
         // Default Super Admin
@@ -286,6 +306,14 @@ class DefaultDataUsersTableSeeder extends Seeder
 
              
             ['name' => 'show job'],
+
+              // for announcement 
+              ['name' => 'manage note'],
+              ['name' => 'create note'],
+              ['name' => 'edit note'],
+              ['name' => 'delete note'],
+              ['name' => 'show note'],   
+
 
              
         ];
