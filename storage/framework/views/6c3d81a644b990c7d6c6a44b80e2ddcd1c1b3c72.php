@@ -8,15 +8,8 @@
     <div class="logo-gridwrap">
         <a class="codexbrand-logo" href="<?php echo e(route('home')); ?>">
             <img class="img-fluid"
-            src="<?php echo e($logoPath ?? asset('images/logo.png')); ?>" alt="Application Logo" style="width: 100px; height: auto;">
-
-              
-
+                 src="<?php echo e($logoPath ?? asset('images/logo.png')); ?>" alt="Application Logo" style="width: 100px; height: auto;">
         </a>
-        <a class="codex-darklogo" href="<?php echo e(route('home')); ?>">
-            <img class="img-fluid"
-                  alt="theeme-logo"></a>
-        <div class="sidebar-action"><i data-feather="menu"></i></div>
     </div>
     <div class="icon-logo">
         <a href="<?php echo e(route('home')); ?>">

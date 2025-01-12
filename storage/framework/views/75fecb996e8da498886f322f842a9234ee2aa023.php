@@ -151,56 +151,129 @@
 <!-- innderpages end-->
 
 <!-- header otpion start-->
+
+<!-- header otpion start-->
 <section class="landheader-comp space-py-100 overflow-visible" id="faq">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                <div class="land-title">
-                    <h2 class="wow fadeInLeft"><?php echo e(__('Frequently Asked Questions')); ?></h2>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <div class="land-title">
+                <h2 class="wow fadeInLeft"><?php echo e(__('Frequently Asked Questions')); ?></h2>
             </div>
         </div>
-        <div class="row pricing-grid">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4><?php echo e(__('Installation Question')); ?></h4>
+    </div>
+    <div class="row pricing-grid">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4><?php echo e(__('Installation Questions')); ?></h4>
+                </div>
+                <div class="card-body">
+                    <div class="codex-accordion accordion accordion-flush" id="install-que">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <?php echo e(__('What are the system requirements for installation?')); ?>
+
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#install-que">
+                                <div class="accordion-body">
+                                    <?php echo e(__('The system requires a web server with PHP 7.4 or higher, a MySQL database, and a modern web browser. Detailed requirements can be found in the documentation.')); ?>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <?php echo e(__('How do I install the migration tracking system?')); ?>
+
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#install-que">
+                                <div class="accordion-body">
+                                    <?php echo e(__('To install the migration tracking system, follow the steps outlined in the installation guide. This includes downloading the package, setting up the database, and configuring the environment settings.')); ?>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <?php echo e(__('Can I install the system on a shared hosting environment?')); ?>
+
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#install-que">
+                                <div class="accordion-body">
+                                    <?php echo e(__('Yes, the system can be installed on a shared hosting environment as long as it meets the system requirements. Please refer to the documentation for specific instructions.')); ?>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div class="codex-accordion accordion accordion-flush" id="install-que">
-                            <div class="accordion-item">                <a class="cdx-collapse collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#cdx-collapce1"><?php echo e(__('What does LOREM mean?')); ?></a>
-                                <div class="collapse" id="cdx-collapce1" data-bs-parent="#install-que">
-                                    <div class="accordion-body">
-                                        <p class="text-light"><?php echo e(__('‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.')); ?></p>
-                                    </div>
+                </div>
+            </div>
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h4><?php echo e(__('General Questions')); ?></h4>
+                </div>
+                <div class="card-body">
+                    <div class="codex-accordion accordion accordion-flush" id="general-que">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <?php echo e(__('What is the migration tracking system?')); ?>
+
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#general-que">
+                                <div class="accordion-body">
+                                    <?php echo e(__('The migration tracking system is a tool designed to help organizations track and manage the migration of employees or individuals to different locations. It provides features for tracking migration status, managing documents, and generating reports.')); ?>
+
                                 </div>
                             </div>
-                            <div class="accordion-item">                <a class="cdx-collapse collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#cdx-collapce2"><?php echo e(__('Where can I subscribe to your newsletter?')); ?></a>
-                                <div class="collapse" id="cdx-collapce2" data-bs-parent="#install-que">
-                                    <div class="accordion-body">
-                                        <p class="text-light"><?php echo e(__('‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.')); ?></p>
-                                    </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <?php echo e(__('How do I add a new employee to the system?')); ?>
+
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#general-que">
+                                <div class="accordion-body">
+                                    <?php echo e(__('To add a new employee, navigate to the "Employees" section and click on "Add New Employee". Fill in the required details and save the information. The new employee will be added to the system.')); ?>
+
                                 </div>
                             </div>
-                            <div class="accordion-item">                <a class="cdx-collapse collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#cdx-collapce3"><?php echo e(__('Where can in edit my address?')); ?></a>
-                                <div class="collapse" id="cdx-collapce3" data-bs-parent="#install-que">
-                                    <div class="accordion-body">
-                                        <p class="text-light"><?php echo e(__('‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.')); ?></p>
-                                    </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <?php echo e(__('Can I generate reports from the system?')); ?>
+
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#general-que">
+                                <div class="accordion-body">
+                                    <?php echo e(__('Yes, the system provides various reporting features. You can generate reports on migration status, employee details, and other relevant data. Navigate to the "Reports" section to access these features.')); ?>
+
                                 </div>
                             </div>
-                            <div class="accordion-item">                <a class="cdx-collapse collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#cdx-collapce4"><?php echo e(__('Can I order a free copy of a magazine to sample?')); ?></a>
-                                <div class="collapse" id="cdx-collapce4" data-bs-parent="#install-que">
-                                    <div class="accordion-body">
-                                        <p class="text-light"><?php echo e(__('‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.')); ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">                <a class="cdx-collapse collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#cdx-collapce5"><?php echo e(__('Do you accept orders via Phone or E-mail?')); ?></a>
-                                <div class="collapse" id="cdx-collapce5" data-bs-parent="#install-que">
-                                    <div class="accordion-body">
-                                        <p class="text-light"><?php echo e(__('‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.')); ?></p>
-                                    </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    <?php echo e(__('Is there a user manual available?')); ?>
+
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#general-que">
+                                <div class="accordion-body">
+                                    <?php echo e(__('Yes, a comprehensive user manual is available in the documentation section. It provides detailed instructions on how to use the system and its various features.')); ?>
+
                                 </div>
                             </div>
                         </div>
@@ -209,6 +282,7 @@
             </div>
         </div>
     </div>
+</div>
 </section>
 <!-- header otpion End-->
 <!-- footer start-->
