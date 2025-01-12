@@ -1,5 +1,9 @@
 <?php $__env->startSection('page-title'); ?>
+<<<<<<< HEAD
     <?php echo e(__('Note')); ?>
+=======
+    <?php echo e(__('Announcement')); ?>
+>>>>>>> chart
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('breadcrumb'); ?>
@@ -8,15 +12,26 @@
             <a href="<?php echo e(route('dashboard')); ?>"><h1><?php echo e(__('Dashboard')); ?></h1></a>
         </li>
         <li class="breadcrumb-item active">
+<<<<<<< HEAD
             <a href="#"><?php echo e(__('Note')); ?></a>
+=======
+            <a href="#"><?php echo e(__('Announcement')); ?></a>
+>>>>>>> chart
         </li>
     </ul>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('card-action-btn'); ?>
+<<<<<<< HEAD
     <?php if(Gate::check('create note') || \Auth::user()->type=='super admin'): ?>
         <a class="btn btn-primary btn-sm ml-20 customModal" href="#" data-size="md"
            data-url="<?php echo e(route('note.create')); ?>"
            data-title="<?php echo e(__('Create New Note')); ?>"> <i class="ti-plus mr-5"></i><?php echo e(__('Create Note')); ?></a>
+=======
+    <?php if(\Auth::user()->type == 'super admin'): ?>
+        <a class="btn btn-primary btn-sm ml-20 customModal" href="#" data-size="md"
+           data-url="<?php echo e(route('note.create')); ?>"
+           data-title="<?php echo e(__('Create New Announcement')); ?>"> <i class="ti-plus mr-5"></i><?php echo e(__('Create Announcement')); ?></a>
+>>>>>>> chart
     <?php endif; ?>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -30,7 +45,11 @@
                             <th><?php echo e(__('Title')); ?></th>
                             <th><?php echo e(__('Description')); ?></th>
                             <th><?php echo e(__('Created At')); ?></th>
+<<<<<<< HEAD
                             <?php if(Gate::check('edit note') || Gate::check('delete note') || \Auth::user()->type=='super admin'): ?>
+=======
+                            <?php if(Gate::check('edit note') || Gate::check('delete note') ||  Gate::check('show note')|| \Auth::user()->type=='super admin'): ?>
+>>>>>>> chart
                                 <th><?php echo e(__('Action')); ?></th>
                             <?php endif; ?>
                         </tr>
@@ -50,6 +69,7 @@
                                                 <a href="<?php echo e(asset('/storage/upload/applicant/attachment/'.$note->attachment)); ?>"
                                                    target="_blank"><i data-feather="download"></i></a>
                                             <?php endif; ?>
+<<<<<<< HEAD
                                             <?php if(Gate::check('edit note') || \Auth::user()->type=='super admin'): ?>
                                                 <a class="text-success customModal" data-bs-toggle="tooltip"
                                                    data-bs-original-title="<?php echo e(__('Edit')); ?>" href="#"
@@ -62,6 +82,20 @@
                                                    data-bs-original-title="<?php echo e(__('Detete')); ?>" href="#"> <i
                                                         data-feather="trash-2"></i></a>
                                             <?php endif; ?>
+=======
+                                            <?php if(\Auth::user()->type == 'super admin'): ?>
+                                            <a class="text-success customModal" data-bs-toggle="tooltip"
+                                               data-bs-original-title="<?php echo e(__('Edit')); ?>" href="#"
+                                               data-url="<?php echo e(route('note.edit', $note->id)); ?>"
+                                               data-title="<?php echo e(__('Edit Note')); ?>"> <i data-feather="edit"></i></a>
+                                        
+                                            <a class="text-danger confirm_dialog" data-bs-toggle="tooltip"
+                                               data-bs-original-title="<?php echo e(__('Delete')); ?>" href="#"
+                                               data-url="<?php echo e(route('note.destroy', $note->id)); ?>"
+                                               data-method="delete" data-confirm="<?php echo e(__('Are you sure you want to delete this note?')); ?>">
+                                               <i data-feather="trash-2"></i></a>
+                                        <?php endif; ?>
+>>>>>>> chart
                                             <?php echo Form::close(); ?>
 
                                         </div>

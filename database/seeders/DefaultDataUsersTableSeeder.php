@@ -83,7 +83,19 @@ class DefaultDataUsersTableSeeder extends Seeder
             [
                 'name' => 'delete note',
                 'guard_name' => 'web',
+
             ],
+            [
+                'name' => 'show note',
+                'guard_name' => 'web',
+
+            ],
+            [
+                'name' => 'manage logged history',
+                'guard_name' => 'web',
+
+            ],
+
             [
                 'name' => 'manage logged history',
                 'guard_name' => 'web',
@@ -150,6 +162,28 @@ class DefaultDataUsersTableSeeder extends Seeder
             ],
             [
                 'name' => 'manage google recaptcha settings',
+                'guard_name' => 'web',
+            ],
+
+            // for jobs 
+            [
+                'name' => 'manage job',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'create job',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'edit job',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'delete job',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'show job',
                 'guard_name' => 'web',
             ],
         ];
@@ -223,6 +257,21 @@ class DefaultDataUsersTableSeeder extends Seeder
 
             ['name' => 'manage logged history'],
             ['name' => 'delete logged history'],
+
+            // for jobs 
+            ['name' => 'manage job'],
+            ['name' => 'create job'],
+            ['name' => 'edit job'],
+            ['name' => 'delete job'],
+            ['name' => 'show job'],
+
+            // for announcement 
+            ['name' => 'manage note'],
+            ['name' => 'create note'],
+            ['name' => 'edit note'],
+            ['name' => 'delete note'],
+            ['name' => 'show note'],   
+
         ];
         $systemSuperAdminRole->givePermissionTo($systemSuperAdminPermission);
         // Default Super Admin
@@ -252,7 +301,20 @@ class DefaultDataUsersTableSeeder extends Seeder
             ['name' => 'create employee'],
             ['name' => 'edit employee'],
             ['name' => 'delete employee'],  
-            ['name' => 'show employee'],    
+            ['name' => 'show employee'],   
+            // show job 
+
+             
+            ['name' => 'show job'],
+
+              // for announcement 
+              ['name' => 'manage note'],
+              ['name' => 'create note'],
+              ['name' => 'edit note'],
+              ['name' => 'delete note'],
+              ['name' => 'show note'],   
+
+
              
         ];
         $systemUserRole->givePermissionTo($systemUserPermission);

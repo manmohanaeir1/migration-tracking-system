@@ -79,7 +79,17 @@
                     </li>
                 <?php endif; ?>
                 
-                                 
+                <?php if(Gate::check('manage note')): ?>
+                    <li class="menu-item <?php echo e(in_array($routeName, ['note.index']) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('note.index')); ?>">
+                            <div class="icon-item"><i data-feather="file-text"></i></div>
+                            <span><?php echo e(__('Announcement')); ?></span>
+                        </a>
+                    </li>   
+                <?php endif; ?>
+                
+                
+             
                 <?php if(Gate::check('manage contact')): ?>
                     <li class="menu-item <?php echo e(in_array($routeName,['contact.index'])?'active':''); ?>">
                         <a href="<?php echo e(route('contact.index')); ?>">
@@ -89,16 +99,20 @@
                     </li>
                 <?php endif; ?>
 
-                <?php if(Gate::check('manage note')): ?>
-                    <li class="menu-item <?php echo e(in_array($routeName,['note.index'])?'active':''); ?> ">
-                        <a href="<?php echo e(route('note.index')); ?>">
-                            <div class="icon-item"><i data-feather="file-text"></i></div>
-                            <span><?php echo e(__('Note')); ?></span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-
+               
             <?php endif; ?>
+
+            
+
+
+            
+
+                 
+                             
+            
+ 
+
+        
            
             <?php if(Gate::check('manage pricing packages') || Gate::check('manage pricing transation') || Gate::check('manage account settings') || Gate::check('manage password settings') || Gate::check('manage general settings') || Gate::check('manage company settings')): ?>
                 <li class="cdxmenu-title">

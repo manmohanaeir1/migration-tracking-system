@@ -79,7 +79,17 @@
                     </li>
                 @endif
                 
-                                 
+                @if(Gate::check('manage note'))
+                    <li class="menu-item {{ in_array($routeName, ['note.index']) ? 'active' : '' }}">
+                        <a href="{{ route('note.index') }}">
+                            <div class="icon-item"><i data-feather="file-text"></i></div>
+                            <span>{{ __('Announcement') }}</span>
+                        </a>
+                    </li>   
+                @endif
+                
+                
+             
                 @if(Gate::check('manage contact'))
                     <li class="menu-item {{in_array($routeName,['contact.index'])?'active':''}}">
                         <a href="{{route('contact.index')}}">
@@ -89,16 +99,20 @@
                     </li>
                 @endif
 
-                @if(Gate::check('manage note'))
-                    <li class="menu-item {{in_array($routeName,['note.index'])?'active':''}} ">
-                        <a href="{{route('note.index')}}">
-                            <div class="icon-item"><i data-feather="file-text"></i></div>
-                            <span>{{__('Note')}}</span>
-                        </a>
-                    </li>
-                @endif
-
+               
             @endif
+
+            {{-- end --}}
+
+
+            
+
+                 
+                             
+            
+ 
+
+        {{-- end --}}
            
             @if(Gate::check('manage pricing packages') || Gate::check('manage pricing transation') || Gate::check('manage account settings') || Gate::check('manage password settings') || Gate::check('manage general settings') || Gate::check('manage company settings'))
                 <li class="cdxmenu-title">

@@ -23,11 +23,14 @@ class HomeController extends Controller
                   $result['totalEmployee'] = Employee::count();
                 // make for total active employ check active 
                    
-                $result['activeEmployee'] = Employee::where('status', '1')->count();
-                $result['inactiveEmployee'] = Employee::where('status', '0')->count();          
-
-        
-            return view('dashboard.super_admin', compact('result'));
+                $totalActiveEmployees = Employee::where('status', 1)->count();
+                $totalInactiveEmployees = Employee::where('status', 0)->count();
+            
+                return view('dashboard.super_admin', [
+                    'totalActiveEmployees' => $totalActiveEmployees,
+                    'totalInactiveEmployees' => $totalInactiveEmployees,
+                    'totalEmployee' => $totalActiveEmployees + $totalInactiveEmployees,
+                ]);
             } else {
                 
                 $result['totalEmployee'] = Employee::count();

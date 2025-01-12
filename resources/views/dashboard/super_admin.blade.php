@@ -10,45 +10,52 @@
 
     </ul>
 @endsection
- 
+
 @section('content')
-    <div class="row">
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>{{__('Total  ')}}</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <i data-feather="user"></i> <!-- Man icon -->
-                    <h2>{{$result['totalEmployee']}}</h2>
-                </div>
+<div class="row">
+    <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
+        <div class="card sale-revenue">
+            <canvas id="employeeChart" width="400" height="400"></canvas>
             </div>
         </div>
-
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>{{__('Active  ')}}</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <i data-feather="user"></i> <!-- Man icon -->
-                    <h2>{{$result['activeEmployee']}}</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-            <div class="card sale-revenue">
-                <div class="card-header">
-                    <h4>{{__('Inactive  ')}}</h4>
-                </div>
-                <div class="card-body progressCounter">
-                    <i data-feather="user"></i> <!-- Man icon -->
-                    <h2>{{$result['inactiveEmployee']}}</h2>
-                </div>
-            </div>
-        </div>
-        
-
- 
     </div>
+</div>
 @endsection
+
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var ctx = document.getElementById('employeeChart').getContext('2d');
+        var employeeChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Active Employees', 'Inactive Employees'],
+                datasets: [{
+                    label: 'Employees',
+                    data: [{{ $totalActiveEmployees }}, {{ $totalInactiveEmployees }}],
+                    backgroundColor: ['#36a2eb', '#ff6384'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        // boldtitle 
+                        display: true,
+                        text: 'Employee Status',
+                        font: {
+                            size: 20
+                        }
+                                                  
+
+                         
+                    }
+                }
+            }
+        });
+    });
+</script>
+ 
+ 
