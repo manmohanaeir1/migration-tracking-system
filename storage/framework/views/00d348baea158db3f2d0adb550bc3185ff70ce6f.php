@@ -50,18 +50,18 @@
                                                 <a href="<?php echo e(asset('/storage/upload/applicant/attachment/'.$note->attachment)); ?>"
                                                    target="_blank"><i data-feather="download"></i></a>
                                             <?php endif; ?>
-                                            <?php if(Gate::check('edit note') || \Auth::user()->type=='super admin'): ?>
-                                                <a class="text-success customModal" data-bs-toggle="tooltip"
-                                                   data-bs-original-title="<?php echo e(__('Edit')); ?>" href="#"
-                                                   data-url="<?php echo e(route('note.edit',$note->id)); ?>"
-                                                   data-title="<?php echo e(__('Edit Note')); ?>"> <i data-feather="edit"></i></a>
-                                            <?php endif; ?>
-                                            
-                                            <?php if(Gate::check('delete note') || \Auth::user()->type=='super admin'): ?>
-                                                <a class=" text-danger confirm_dialog" data-bs-toggle="tooltip"
-                                                   data-bs-original-title="<?php echo e(__('Detete')); ?>" href="#"> <i
-                                                        data-feather="trash-2"></i></a>
-                                            <?php endif; ?>
+                                            <?php if(\Auth::user()->type == 'super admin'): ?>
+                                            <a class="text-success customModal" data-bs-toggle="tooltip"
+                                               data-bs-original-title="<?php echo e(__('Edit')); ?>" href="#"
+                                               data-url="<?php echo e(route('note.edit', $note->id)); ?>"
+                                               data-title="<?php echo e(__('Edit Note')); ?>"> <i data-feather="edit"></i></a>
+                                        
+                                            <a class="text-danger confirm_dialog" data-bs-toggle="tooltip"
+                                               data-bs-original-title="<?php echo e(__('Delete')); ?>" href="#"
+                                               data-url="<?php echo e(route('note.destroy', $note->id)); ?>"
+                                               data-method="delete" data-confirm="<?php echo e(__('Are you sure you want to delete this note?')); ?>">
+                                               <i data-feather="trash-2"></i></a>
+                                        <?php endif; ?>
                                             <?php echo Form::close(); ?>
 
                                         </div>

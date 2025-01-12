@@ -49,18 +49,18 @@
                                                 <a href="{{asset('/storage/upload/applicant/attachment/'.$note->attachment)}}"
                                                    target="_blank"><i data-feather="download"></i></a>
                                             @endif
-                                            @if(Gate::check('edit note') || \Auth::user()->type=='super admin')
-                                                <a class="text-success customModal" data-bs-toggle="tooltip"
-                                                   data-bs-original-title="{{__('Edit')}}" href="#"
-                                                   data-url="{{ route('note.edit',$note->id) }}"
-                                                   data-title="{{__('Edit Note')}}"> <i data-feather="edit"></i></a>
-                                            @endcan
-                                            
-                                            @if(Gate::check('delete note') || \Auth::user()->type=='super admin')
-                                                <a class=" text-danger confirm_dialog" data-bs-toggle="tooltip"
-                                                   data-bs-original-title="{{__('Detete')}}" href="#"> <i
-                                                        data-feather="trash-2"></i></a>
-                                            @endcan
+                                            @if(\Auth::user()->type == 'super admin')
+                                            <a class="text-success customModal" data-bs-toggle="tooltip"
+                                               data-bs-original-title="{{ __('Edit') }}" href="#"
+                                               data-url="{{ route('note.edit', $note->id) }}"
+                                               data-title="{{ __('Edit Note') }}"> <i data-feather="edit"></i></a>
+                                        
+                                            <a class="text-danger confirm_dialog" data-bs-toggle="tooltip"
+                                               data-bs-original-title="{{ __('Delete') }}" href="#"
+                                               data-url="{{ route('note.destroy', $note->id) }}"
+                                               data-method="delete" data-confirm="{{ __('Are you sure you want to delete this note?') }}">
+                                               <i data-feather="trash-2"></i></a>
+                                        @endif
                                             {!! Form::close() !!}
                                         </div>
                                     </td>
